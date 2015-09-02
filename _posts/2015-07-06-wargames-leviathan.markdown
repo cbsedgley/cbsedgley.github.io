@@ -1,0 +1,39 @@
+---
+date: 2015-07-06 19:28:34+00:00
+slug: wargames-leviathan
+title: 'WarGames: Leviathan'
+categories:
+- wargames
+---
+
+Since I'm almost done with Bandit and have been stuck on level 25 for awhile, I decided to move to the next WarGame called Leviathan. Leviathan is a wargame that has been rescued from the demise of **intruded.net**, previously hosted on leviathan.intruded.net. Thanks to adc, morla and reth for their help in resurrecting this game!
+
+**Leviathan LEVEL 0**
+
+Level 0 Goal: _There is no information for this level, intentionally._
+
+![Leviathan0](/images/leviathan_images/screen-shot-2015-03-23-at-3-35-32-pm.png)
+
+What I Did: __ssh__ into the home directory. List files using __ls -la__ and then used __cd__ to see what the directory __.backup__ held. Listed the files and saw that the directory held a file called __bookmarks.html.__ After cat'ing the file, there really wasn't anything of use I could note right away. I decided to use the __grep__ command to search for __leviathan1__ since that was the password I needed to move on. I was returned a bookmark containing the password for Levianthan1.
+
+Level 1 Password: __rioGegei8m__
+
+**Leviathan LEVEL 1**
+
+**Level 1 Goal:** _There is no information for this level, intentionally._
+
+![Leviathan2](/images/leviathan_images/screen-shot-2015-03-31-at-12-48-55-pm.png)
+
+What I Did: A quick __ls -l__ of the home directory gave me an __32-bin LSB executable__ file called __check.__ When running the file, I was told to enter a password. I entered __test__ as the password to see what would occur and the program responded with __"Wrong password, Good Bye ..."__ I decided to see what I could find out using the command __ltrace__ which would intercept and record the processes made in the program. I quickly pressed __enter__ to proceed through the different processes and was promptly returned the string __strcmp("\n\n\n", "sex").__ It appeared that __sex__ was the password it was looking for, so I ran the file again and typed in the password __sex.__ I was presented with a shell and a quick run of __whoami__ told me I was __leviathan2.__ From here I used the __cat__ command on __/etc/leviathan_pass/leviathan2__ to obtain the password for leviathan2.
+
+Level 2 Password: **ougahZi8Ta**
+
+**Leviathan LEVEL 2**
+
+Level 2 Goal: _There is no information for this level, intentionally._
+
+What I Did:
+
+Level 3 Password:
+
+**This post will continue to be updated as levels are completed**

@@ -1,0 +1,384 @@
+---
+date: 2015-06-24 01:40:44+00:00
+slug: wargames-bandit-2
+title: 'WarGames: Bandit'
+categories:
+- wargames
+tags:
+- wargames
+---
+
+Now that I've completed my first boot2root (tr0ll) I decided to start looking at some different websites I could practice my skills on. One site I kept hearing about was __overthewire.org__ so I finally checked it out. It recommended that I begin with the Bandit war game, so I will keep this post updated as a progress through the different levels of Bandit.
+
+**BANDIT LEVEL 0**
+
+Level 0 Goal: _The goal of this level is for you to log into the game using SSH. The host to which you need to connect is **bandit.labs.overthewire.org**. The username is __bandit0__ _and the password is_ __bandit0__. _Once logged in, go to the [Level 1](http://overthewire.org/wargames/bandit/bandit1.html) page to find out how to beat Level 1._
+
+Commands: __ssh__
+
+![Bandit0](/images/bandit_images/screen-shot-2015-02-24-at-9-11-56-pm.png)
+
+What I Did: __ssh__ into the home directory. List file using __ls__ and then used __cat__ to see what the file held.
+
+Level 1 Password: **boJ9jbbUNNfktd78OOpsqOltutMc3MY1**
+
+**BANDIT LEVEL 1**
+
+Level 1 Goal: _The password for the next level is stored in a file called **readme** located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH to log into that level and continue the game._
+
+Commands: __ls, cd, cat, file, du, find__
+
+![Bandit1](/images/bandit_images/screen-shot-2015-02-24-at-9-10-47-pm.png)
+
+What I Did: __ssh__ into the home directory. Since __"-"__ is a special character, you need to use the command __cd_ _./-__ in order to see the password for level 2.
+
+Level 2 Password: **CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9**
+
+**BANDIT LEVEL 2**
+
+Level 2 Goal: _The password for the next level is stored in a file called_ __spaces__ _in this filename** located in the home directory_
+
+Commands: __ls, cd, cat, file, du, find__
+
+![Bandit2](/images/bandit_images/screen-shot-2015-02-24-at-9-13-15-pm.png)
+
+What I Did: __ssh__ into the home directory. Used __cat__ and then added double quotes __(" ")__ to escape the spaces in the filename.
+
+Level 3 Password: **UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK**
+
+**BANDIT LEVEL 3**
+
+Level 3 Goal: _The password for the next level is stored in a hidden file in the_ __inhere__ _directory._
+
+Commands: __ls, cd, cat, file, du, find__
+
+![Bandit3](/images/bandit_images/screen-shot-2015-02-24-at-9-22-37-pm.png)
+
+What I Did: __cd__ into the directory __inhere__. Used the command __ls -a__ so that hidden files were shown. Then used the __cat__ command on the file __.hidden__ to see the password for level 4.
+
+Level 4 Password: __pIwrPrtPN36QITSp3EQaw936yaFoFgAB__
+
+**BANDIT LEVEL 4**
+
+Level 4 Goal: _The password for the next level is stored in the only human-readable file in the_ __inhere__ _directory. Tip: if your terminal is messed up, try the “reset” command._
+
+Commands: __ls, cd, cat, file, du, find__
+
+![Bandit4](/images/bandit_images/screen-shot-2015-02-24-at-9-27-27-pm.png)
+What I Did: __cd__ into the inhere directory but couldn't figure out to search for just human-readable files using the __du -h__ command. I just used __cat__ until I found the password for level 5.
+
+Level 5 Password: **koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
+
+**BANDIT LEVEL 5**
+
+Level 5 Goal: _The password for the next level is stored in a file somewhere under the_ __inhere__ _directory and has all of the following properties:_ __human-readable - 1033 bytes in size - not executable__
+
+Commands: __ls, cd, cat, file, du, find__
+
+![Bandit5](/images/bandit_images/screen-shot-2015-02-24-at-9-30-38-pm.png)
+
+What I Did: used __ls__ to see what directories and files were in the directory __inhere__. Used the command __find -type f -size 1033c__ to find the file that met the properties mentioned above. Used the __cat__ command on the returned output which was __./maybehere07/.file2__ and was returned the password for level 6.
+
+Level 6 Password: **DXjZPULLxYr17uwoI01bNLQbtFemEgo7**
+
+**BANDIT LEVEL 6**
+
+Level 6 Goal: _The password for the next level is stored_ __somewhere on the server__ _and has all of the following properties:_ __owned by user bandit7 - owned by group bandit6 - 33 bytes in size__
+
+Commands: __ls, cd, cat, file, du, find, grep__
+
+![Bandit6](/images/bandit_images/screen-shot-2015-02-24-at-9-33-18-pm.png)
+
+![Bandit6-1](/images/bandit_images/screen-shot-2015-02-24-at-9-33-41-pm.png)
+
+![Bandit6-2](/images/bandit_images/screen-shot-2015-02-24-at-9-34-05-pm.png)
+
+What I Did: Nothing showed up in the first directory I was logged into, so I decided to __cd__ into the __root (/)__ directory. I than ran the command __find -type f -user bandit7 -group bandit6 -size 33c__ which met most of the properties mentioned in the level 6 goals. The result that caught my eye right away was __./var/lib/dpkg/info/bandit7.password__. I used the __cat__ command on the file and was given the password for level 7. 
+
+Level 7 Password: __HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs__
+
+**BANDIT LEVEL 7**
+
+Level 7 Goal: _The password for the next level is stored in the file_ __data.txt__ _next to the word_ __millionth__
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
+
+![Bandit7](/images/bandit_images/screen-shot-2015-02-24-at-9-36-31-pm.png)
+
+What I Did: Was given a text file called __data.txt__ and needed to find the password for the next level, which was next to the word __millionth__. I used the command __grep "millionth" data.txt__ and was returned the searched word with the password for level 8 next to it. 
+
+Level 8 Password: **cvX2JJa4CFALtqS87jk27qwqGhBM9plV**
+
+**BANDIT LEVEL 8**
+
+Level 8 Goal: _The password for the next level is stored in the file_ __data.txt__ _and is the only line of text that occurs only once_
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
+
+![Bandit8](/images/bandit_images/screen-shot-2015-03-17-at-4-24-21-pm.png)
+
+What I Did: This level was pretty straight forward. First I used the __sort__ command on data.txt and appended __| uniq -u__ to search for a uniq line in the file.
+
+Level 9 Password: **UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR**
+
+**BANDIT LEVEL 9**
+
+Level 9 Goal: _The password for the next level is stored in the file_ __data.txt__ _in one of the few human-readable strings, beginning with several_ __‘=’__ _characters._
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
+
+![Bandit9](/images/bandit_images/screen-shot-2015-03-17-at-4-23-12-pm.png)
+
+What I Did: Used __strings__ on __data.txt__ and appended __| grep '='__ to print all strings in the file beginning with __'='__
+
+Level 10 Password: **truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk**
+
+**BANDIT LEVEL 10**
+
+Level 10 Goal: _The password for the next level is stored in the file __data.txt__ _,which contains_ __base64 encoded data.__
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
+
+![Bandit10](/images/bandit_images/screen-shot-2015-03-17-at-4-21-26-pm.png)
+
+What I Did: This level was really easy. Just used the command __base64 -d data.txt__ to decode the base64 encoded data. The output was __"The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR"__
+
+Level 11 Password: **IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR**
+
+**BANDIT LEVEL 11**
+
+Level 11 Goal: _The password for the next level is stored in the file_ __data.txt__ _,where all_ __lowercase (a-z)__ _and_ __uppercase (A-Z)__ _letters have been rotated by_ __13 positions__
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
+
+![bandit11](/images/bandit_images/screen-shot-2015-03-17-at-4-15-50-pm.png)
+
+What I Did: After using __cat__ on __data.txt__ I received a string that had a ROT13 cipher applied to it. After reading up on ROT13, I discovered that the same cipher is used to encode and decode a string. Using the command __echo__ on the encrypted string and appending __tr 'A-Za-z' 'N-ZA-Mn-za-m'__ to the command, the encrypted string was decoded resulting in the output of __"The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu"__
+
+Level 12 Password: **5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu**
+
+**BANDIT LEVEL 12**
+
+Level 12 Goal: _The password for the next level is stored in the file_ __data.txt__ _,which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under_ __/tmp__ _in which you can work using_ __mkdir.__ _For example:_ __mkdir /tmp/myname123.__ _Then copy the datafile using_ __cp__ _and rename it using_ __mv__ _(read the manpages!)_
+
+Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv__
+
+![Bandit12](/images/bandit_images/screen-shot-2015-03-17-at-5-06-56-pm.png)
+
+What I Did: This level sucked. Had to look up a hint because I was unsure what to do once I converted the hexdump using __xxd.__ First thing I did was output the results of the __xdd__ conversion to the directory __/tmp/output__ as __a.txt__ (you need to make the directory first using the __mkdir__ command). Once I used the __cat__ command, I could see that that I was still working with a compressed file.
+
+![Bandit12-1](/images/bandit_images/screen-shot-2015-03-17-at-5-10-29-pm.png)
+
+Using the __file__ command, I could see I was working with __gzip compressed data.__ I renamed the file __a.txt__ to __a.txt.gz__ so I could decompress the file using __gzip.__
+
+![Bandit12-2](/images/bandit_images/screen-shot-2015-03-17-at-5-12-43-pm.png)
+
+Once decompressed, I ran the __file__ command again and saw I working with __bzip2__ compressed data with a __block size = 900k.__ Ok, I renamed __a.txt__ to __a.txt.bz2__ so I could decompress the file using __bzip2.__
+
+![Bandit12-3](/images/bandit_images/screen-shot-2015-03-17-at-5-15-28-pm.png)
+
+Back to working with __gzip__ again. I followed the same gzip process shown above and used the __file__ command on the file again and received the following:
+
+![Bandit12-4](/images/bandit_images/screen-shot-2015-03-17-at-5-17-32-pm.png)
+
+Now, I was working with a tar file. I renamed __a.txt_- to __a.txt.tar__ and decompressed using the __tar xf__ command.
+
+![Bandit12-5](/images/bandit_images/screen-shot-2015-03-17-at-5-20-07-pm.png)
+
+I extracted the file __data5.bin__ and ran the __file__ command again to see it was also a __POSIX tar archive.__ Using the same process as above, I received the following:
+
+![Bandit12-6](/images/bandit_images/screen-shot-2015-03-17-at-5-22-00-pm.png)
+
+Getting old now... Used the __bzip2__ process I've done multiple times...
+
+![Bandit12-7](/images/bandit_images/screen-shot-2015-03-17-at-5-26-08-pm.png)
+
+I continue this decompression mess using the various __bzip2, gzip, and tar__ methods until I finally end up with a file called __data8.bin__ with a file type being __ASCII txt.__ I ran the __cat__ command on the file and ended up with the string __"The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL".__ What an annoying level...
+
+Level 13 Password: **8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL**
+
+**BANDIT LEVEL 13**
+
+Level 13 Goal: _The password for the next level is stored in_ __/etc/bandit_pass/bandit14__ _and can only be read by user_ __bandit14.__ _For this level, you don’t get the next password, but you get a_ __private SSH key__ _that can be used to log into the next level._ __Note:__ __localhost__ _is a hostname that refers to the machine you are working on._
+
+Commands: __ssh, telnet, nc, openssl, s_client, nmap__
+
+![Bandit13](/images/bandit_images/screen-shot-2015-03-17-at-5-48-34-pm.png)
+
+What I Did: Once connected to bandit13, I could see I needed to utilize a private ssh key called __sshkey.private__ to connect to bandit14. I used FileZilla to grab the key (couldn't get __scp__ to work for whatever reason), I then used the command __ssh -i sshkey.private bandit14@bandit.labs.overthewire.org.__ It gave some error saying I shouldn't be using shared private keys or something. I just appended __sudo__ to the beginning of the command to see if I could override the error, which I was able to successfully do.
+
+Level 14 Password: **No password here, just a private ssh key to login.**
+
+**BANDIT LEVEL 14**
+
+Level 14 Goal: _The password for the next level can be retrieved by submitting the password of the current level to_ __port 30000__ _on_ __localhost.__
+
+Commands: __ssh, telnet, nc, openssl, s_client, nmap__
+
+![Bandit14](/images/bandit_images/screen-shot-2015-03-17-at-5-55-37-pm.png)
+
+What I Did: Pretty straightforward. Copied down the password and use the command __telnet__ to open a connection and typed in __open localhost 30000__ to specify the connection is on port 30000. Then I just typed in __4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e__ and was presented with the password for Bandit15.
+
+![Bandit14-1](/images/bandit_images/screen-shot-2015-03-17-at-6-02-04-pm.png)
+
+Level 15 Password: **BfMYroe26WYalil77FoDi9qh59eK5xNr**
+
+**BANDIT LEVEL 15**
+
+Level 15 Goal: _The password for the next level can be retrieved by submitting the password of the current level to_ __port 30001__ _on_ __localhost__ _using_ __SSL encryption.__
+
+__Helpful note:__ _Getting_ __“HEARTBEATING”__ _and_ __“Read R BLOCK”?__ _Use -quiet and read the_ __“CONNECTED COMMANDS”__ _section in the manpage. Next to_ __‘R’__ _and_ __‘Q’,__ _the_ __‘B’__ _command also works in this version of that command…_
+
+Commands: __ssh, telnet, nc, openssl, s_client, nmap__
+
+![Bandit15](/images/bandit_images/screen-shot-2015-03-17-at-6-08-09-pm.png)
+
+What I Did: Wanted to see what would happen if I used the process for Bandit14 on Bandit15. I knew it was most likely not going to work and I received the following error message:
+
+__ERROR__
+
+__140737354045088:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3_pkt.c:350:__
+
+I then looked up ways for telnet to communicate over ssl and found that __OpenSSL__ has an SSL tool. Using the command __openssl s_client -connect localhost:30001__ I procured the following output.
+
+![Bandit15-1](/images/bandit_images/screen-shot-2015-03-17-at-6-17-46-pm.png)
+
+I then tried to pass the Bandit15 password and received the following output...
+
+![Bandit15-2](/images/bandit_images/screen-shot-2015-03-17-at-6-19-10-pm.png)
+
+I was receiving the errors warned about in the level goal, so that some good news. I appended __-quiet__ to the end of the command to look like __openssl s_client -connect localhost:30001 -quiet__ and once I entered the Bandit15 password, I received the following output.
+
+![Bandit15-3](/images/bandit_images/screen-shot-2015-03-17-at-6-38-10-pm.png)
+
+Level 16 Password: **cluFn7wTiGryunymYOu4RcffSxQluehd**
+
+**BANDIT LEVEL 16**
+
+Level 16 Goal: _The password for the next level can be retrieved by submitting the password of the current level to_ __a port on localhost in the range 31000 to 32000.__ _First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only_ __1 server__ _that will give the next password, the others will simply send back to you whatever you send to it._
+
+Commands: __ssh, telnet, nc, openssl, s_client, nmap__
+
+![Bandit16](/images/bandit_images/screen-shot-2015-03-17-at-8-08-28-pm.png)
+
+What I Did: Using __nmap__ I ran a scan on all the ports between 31000 and 32000 and got back results that __5__ were open. From here it was just trial and error using the previous command from Bandit16 __openssl s_client -connect localhost:(testing each port number shown in the picture above).__ Port 31790 returned the response shown below when I entered the password for Bandit16.
+
+![Bandit16-1](/images/bandit_images/screen-shot-2015-03-17-at-8-16-07-pm.png)
+
+I took this RSA Private Key and copied it to a file called Bandit17 because I knew I was going to have to do a private key login similar to Bandit14. I created a file in __/tmp__ called __ssh.private__ and copied the RSA into it using __nano.__ I then changed the permissions using __chmod 600__ and finally gained a shell on Bandit17 using the command __ssh -i ssh.private bandit17@localhost__
+
+Level 17 Password: **RSA Private Key shown above**
+
+**BANDIT LEVEL 17**
+
+Level 17 Goal: _There are 2 files in the homedirectory:_ __passwords.old__ _and_ __passwords.new.__ _The password for the next level is in_ __passwords.new__ _and is the only line that has been changed between_ __passwords.old__ _and_ __passwords.new__
+
+__NOTE:__ If you have solved this level and see __‘Byebye!’__ when trying to log into bandit18, this is related to the next level, bandit19.
+
+Commands: __cat, grep, ls, diff__
+
+![Bandit17](/images/bandit_images/screen-shot-2015-03-17-at-8-52-26-pm.png)
+
+What I Did: Ran the command __diff__ between the two files and found the line that was changed. The top line has the password we want to use for Bandit18.
+
+Level 18 Password: **kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd**
+
+**BANDIT LEVEL 18**
+
+Level 18 Goal: _The password for the next level is stored in a file_ __readme__ _in the homedirectory. Unfortunately, someone has modified the_ __.bashrc__ _to log you out when you log in with SSH._
+
+Commands: __ssh, ls, cat__
+
+![Bandit18](/images/bandit_images/screen-shot-2015-03-17-at-9-02-39-pm.png)
+
+What I Did: Used the command __ssh -t bandit18@bandit.labs.overthewire.org /bin/sh__ to spawn a shell through a pseudoterminal which would bypass the __.bashrc__ file logging the user out.
+
+Level 19 Password: **IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x**
+
+**BANDIT LEVEL 19**
+
+Level 19 Goal: _To gain access to the next level, you should use the_ __setuid binary__ _in the homedirectory. Execute it_ __without arguments__ _to find out how to use it. The password for this level can be found in the usual place_ __(/etc/bandit_pass),__ _after you have used the setuid binary._
+
+Commands: __none provided in this level__
+
+![Bandit19](/images/bandit_images/screen-shot-2015-03-17-at-10-26-04-pm.png)
+
+What I Did: **finish**
+
+Level 20 Password: **GbKksEFF4yrVs6il55v6gwY5aVje5f0j**
+
+**BANDIT LEVEL 20**
+
+Level 20 Goal: _There is a_ __setuid binary__ _in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21)._
+
+__NOTE:__ To beat this level, you need to __login twice:__ once to run the setuid command, and once to start a network daemon to which the setuid will connect.
+
+__NOTE 2:__ Try connecting to your own network daemon to see if it works as you think
+
+Commands: __ssh, nc, cat__
+
+![Bandit20-1](/images/bandit_images/screen-shot-2015-03-18-at-2-38-06-pm.png)
+
+![Bandit20](/images/bandit_images/screen-shot-2015-03-18-at-2-37-59-pm.png)
+
+What I Did: Another straight forward level. Used the command __nc -l -p 1234__ to start a server on __localhost__ listening on __port 1234.__ I then used the command __./suconnect 1234__ to make the connection to the localhost. Once both the listening port and connection was made, I then sent the password from Bandit20 and was returned the password for Bandit21.
+
+Level 21 Password: __gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr__
+
+**BANDIT LEVEL 21**
+
+Level 21 Goal: _A program is running automatically at regular intervals from_ __cron,__ _the time-based job scheduler. Look in_ __/etc/cron.d/__ _for the configuration and see what command is being executed._
+
+Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
+
+![Bandit21](/images/bandit_images/screen-shot-2015-03-18-at-2-49-26-pm.png)
+
+What I Did: I used the command __cd__ to see what __cronjobs__ were running in the directory __/etc/cron.d.__ I found one called __cronjob_bandit22__ ,which I figured was the one I wanted to look at. Using the __cat__ command, I could see that it was running a script called __cronjob_bandit22.sh__ in the directory __/usr/bin.__ After using the __cat__ command on the script, I could see that the script took the password stored in the file __/etc/bandit_pass/bandit22__ and output the results to a file in the __tmp__ directory called __t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv.__ Once I used the __cat__ command on the file, I received the password for Bandit22.
+
+Level 22 Password: **Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI**
+
+**BANDIT LEVEL 22**
+
+Level 22 Goal: _A program is running automatically at regular intervals from_ __cron,__ _the time-based job scheduler. Look in_ __/etc/cron.d/__ _for the configuration and see what command is being executed._
+
+__NOTE:__ Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
+
+![Bandit22](/images/bandit_images/screen-shot-2015-03-18-at-3-25-26-pm.png)
+
+What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname | md5sum | cut -d ' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on __/tmp/_8ca319486bfbbc3663ea0fbe81326349__ and was returned the password for Bandit23.
+
+Level 23 Password: **jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n**
+
+**BANDIT LEVEL 23**
+
+Level 23 Goal: _A program is running automatically at regular intervals from_ __cron,__ _the time-based job scheduler. Look in_ __/etc/cron.d/__ _for the configuration and see what command is being executed._
+
+__NOTE:__ This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+
+__NOTE 2:__ Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
+
+Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
+
+![Bandit23-1](/images/bandit_images/screen-shot-2015-03-18-at-3-41-25-pm.png)
+
+![Bandit23](/images/bandit_images/screen-shot-2015-03-18-at-3-41-54-pm.png)
+
+What I Did: Found the password in a file under the directory __poop/poop1__ called __pass.txt.__ Going to redo this one eventually creating the script like I was supposed to haha.
+
+Level 24 Password: **UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ**
+
+**BANDIT LEVEL 24**
+
+Level 24 Goal: _A daemon is listening on_ __port 30002__ _and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through_ __all of the 10000 combinations,__ _called brute-forcing._
+
+Commands: __no commands offered for this level__
+
+What I Did: 
+
+Level 25 Password:
+
+
+
+**This post will continue to be updated as levels are completed**
