@@ -11,7 +11,7 @@ HackThisSite Intro***
 
 Level 1 Goal: _This level is what we call "The Idiot Test", if you can't complete it, don't give up on learning all you can, but, don't go begging to someone else for the answer, thats one way to get you hated/made fun of. Enter the password and you can continue._
 
-![HTSBasic1](/images/hackthissite_images/screen-shot-2015-04-08-at-2-59-57-pm.png)
+![HTSBasic1](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-2-59-57-pm.png)
 
 What I Did: Inspected a webpage element and found the password for level 1 in a comment found in the source code of the website.
 
@@ -29,11 +29,11 @@ Level 2 Password: **blank***
 
 Level 3 Goal: _This time Network Security Sam remembered to upload the password file, but there were deeper problems than that._
 
-![HTSBasic3](/images/hackthissite_images/screen-shot-2015-04-08-at-3-06-49-pm.png)
+![HTSBasic3](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-06-49-pm.png)
 
 What I Did: When inspecting the source code of the webpage, I saw that there was a php file called __password.php.__ I checked to see what would happen if I appended __password.php__ to the url **https://www.hackthissite.org/missions/basic/3/** and I was returned the password for level 3 shown below.
 
-![HTSBasic3-1](/images/hackthissite_images/screen-shot-2015-04-08-at-3-07-44-pm.png)
+![HTSBasic3-1](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-07-44-pm.png)
 
 Level 3 Password: **6eb5953d**
 
@@ -41,15 +41,15 @@ Level 3 Password: **6eb5953d**
 
 Level 4 Goal: _This time Sam hardcoded the password into the script. However, the password is long and complex, and Sam is often forgetful. So he wrote a script that would email his password to him automatically in case he forgot. Here is the script:_
 
-![HTSBasic4](/images/hackthissite_images/screen-shot-2015-04-08-at-3-15-42-pm.png)
+![HTSBasic4](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-15-42-pm.png)
 
 What I Did: I inspected the page source and saw that when I clicked on the button called __"Send password to Sam"__ ,a script would send an email to Sam at __sam@hackthissite.org.__ I changed the email to one that I own and when I pressed the button again, I was returned the following:
 
-![HTSBasic4-1](/images/hackthissite_images/screen-shot-2015-04-08-at-3-15-56-pm.png)
+![HTSBasic4-1](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-15-56-pm.png)
 
 I brought up my email and in my inbox was a message from sam containing the password for level 4.
 
-![HTSBasic4-2](/images/hackthissite_images/screen-shot-2015-04-08-at-3-16-14-pm.png)
+![HTSBasic4-2](/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-16-14-pm.png)
 
 Level 4 Password: **f93e29b0**
 
@@ -65,15 +65,15 @@ Level 5 Password: **65c7574d**
 
 Level 6 Goal: _Network Security Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:_
 
-![HTSBasic6](/images/hackthissite_images/screen-shot-2015-04-16-at-11-15-45-pm.png)
+![HTSBasic6](/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-15-45-pm.png)
 
 What I Did: So we have a textbox that runs an encryption function on a string the user enters. I decided to see if I could pick up what algorithm the function was using, so as a test value, I entered the string __"aaaaaa"__ and was returned the following output:
 
-![HTSBasic6-1](/images/hackthissite_images/screen-shot-2015-04-16-at-11-17-18-pm.png)
+![HTSBasic6-1](/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-17-18-pm.png)
 
 It seemed that the algorithms added +1, +2, +3... to each character, so it was pretty easy to determine how letters were handled. As for numbers (0-9) and symbols (;'[]<>), I entered another string using these characters and was returned the following output:
 
-![HTSBasic6-2](/images/hackthissite_images/screen-shot-2015-04-16-at-11-27-06-pm.png)
+![HTSBasic6-2](/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-27-06-pm.png)
 
 **finish**
 
