@@ -178,7 +178,7 @@ Back to working with __gzip__ again. I followed the same gzip process shown abov
 
 ![Bandit12-4](/img/posts/bandit_images/screen-shot-2015-03-17-at-5-17-32-pm.png)
 
-Now, I was working with a tar file. I renamed __a.txt_- to __a.txt.tar__ and decompressed using the __tar xf__ command.
+Now, I was working with a tar file. I renamed __a.txt__ to __a.txt.tar__ and decompressed using the __tar xf__ command.
 
 ![Bandit12-5](/img/posts/bandit_images/screen-shot-2015-03-17-at-5-20-07-pm.png)
 
@@ -344,7 +344,7 @@ Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
 ![Bandit22](/img/posts/bandit_images/screen-shot-2015-03-18-at-3-25-26-pm.png)
 
-What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname | md5sum | cut -d ' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on __/tmp/_8ca319486bfbbc3663ea0fbe81326349__ and was returned the password for Bandit23.
+What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname__ | __md5sum__ | __cut -d__ __' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on __/tmp/_8ca319486bfbbc3663ea0fbe81326349__ and was returned the password for Bandit23.
 
 Level 23 Password: **jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n**
 
