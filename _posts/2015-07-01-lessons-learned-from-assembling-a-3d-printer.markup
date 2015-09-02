@@ -1,126 +1,72 @@
 ---
 layout: post
 section-type: post
-title: Wargames: Tr0ll
+title: Software Lessons Learned From Assembling a 3D Printer
 category: tech
-tags: [ 'wargames' ]
+tags: [ 'software', 'hardware' ]
 ---
-I've decided that 2015 is the year I really jump into security and begin to hone my knowledge by taking on vulnerable virtual machines (vm's), security certificates, and offensive programming. I'm starting off the year by taking on my first boot2root: tr0ll. Having played around with various security tools in the past (nmap, metasploit, etc...) I felt tr0ll would be a great test on what I already know, as well as what I still need to learn and practice.
+A few weeks ago the Garage team of my office got a little present, a<strike>n IKEA</strike> <a href="http://www.vertex3dprinter.eu/" target="_blank">DIY 3D printer</a>.
+It was zillions of bolts, nuts, wires, motors, rods and tiny plastic pieces which I couldn't imagine that they could assemble a 3D printer.
+I panicked, believing that we will miss a piece and everything will collapse in front of us.
+Whenever I have dealt with hardware so far, I was always frightened.
+You don't call methods, you screw bolts, and they have to be screwed properly, not too tight and not too loose.
+It's not uncommon that testing will not be applicable.
+You will assemble, hit a big button and if every component works, then you call it a day.
+You can't copy-paste hardware, you don't have <strike>a versioning control system</strike> git to undo steps in an instance,
+you are on your own and mistakes can literally make your project fall apart.
+And on top of these, we shouldn't touch the rods with bare hands, because they would corrode.
+Hardware always made me feel nervous and from the point of creating personal pet-projects,
+suddenly I had to collaborate with others in order to build a pyramid.
+It was the similar feeling that you get when you start at your first job after finishing your studies.
 
-When booting up tr0ll in VMware Fusion 7, I was presented with a login prompt shown below.
+My <a href="http://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html" target="_blank">panic monster</a> instructed me immediately to sort all the numbered bags per category (bolts, nuts and miscellaneous) in order to access them efficiently.
+Like a real life index, which proved to be valuable during the first hours.
+We broke down the project into a few independent branches and started following the respective instructions.
+These instructions were practically our software spec equivalents in our new hardware world.
+They were very detailed and with plenty of images, which made you wish all the software specs to be like these.
+Because you knew exactly what you had to do.
+As a result, the only way you could introduce a bug, was by missing a step of the instructions or misunderstanding one.
+As you can imagine, we missed and misread steps and we realized our mistakes during each individual integration.
+Just like in the software world.
+The very first mistake that we discovered was when trying to mount the control board on the box.
+The bottom side of the box was not placed in the correct orientation, which blocked the card reader of the board.
+The result of this?
+We spent 45 minutes of unscrewing and screwing more than 60 bolts and nuts.
+We made 5 more mistakes, which most of them happened because we were tired (the first session lasted 12.5 hours, following a full working day).
+Every one of them cost us time (in the order of half-hours) but also mentally, because we had to take several steps back in order to make one correct step forward.
+For the later cost, the most expensive mistake was when just before the end, we realized that 4 nuts were missing from the <a href="http://manuals.velleman.eu/article.php?id=17" target="_blank">belt clamps</a>.
+In this case we had to unmount the whole printer head in order to fix them  and this process took us one more session of 3 hours.
+One good habit which prevented us from introducing more bugs was that we <strike>code</strike> hardware-reviewed each other.
+We didn't keep this safety net during the whole process, it was happening organically when we were taking breaks.
 
-![Tr0ll login](/img/posts/tr0ll_images/screen-shot-2015-02-24-at-9-47-00-pm.png)
+Summarizing, being organized is useful and it will probably prevent a few bugs.
+Even if you have the perfect spec, you will introduce bugs.
+The more careful you are, the less bugs you will introduce and the more tired you are, the less careful you become.
+The bugs will show up during integration.
+When something fails, we will fix it.
+It's not the end of the world, it just takes time and it hurts your motivation.
+And finally, you need a team, for having fun during the creative process, for agility and as a safety net to each other.
 
-Nothing I can really do here, so I decided to boot up Kali and use arp-scan to find out the ip address of tr0ll. __IMPORTANT:__ Make sure the network adapter is set to NAT on tr0ll so it is allocated an ip addresss through the router's dhcp configuration.
+###Photos
 
-![Tr0ll arp-scan](/img/posts/tr0ll_images/selection_00111.png)
+<img class="img-responsive" src="/img/posts/printer/misc.jpg" alt="parts">
 
-In this case, tr0ll was given the ip of __192.168.116.150__ (Kali is using 192.168.116.254). From here, I decided to run a scan with nmap to see what services tr0ll was running. Using the command: __nmap -sS -A 192.168.116.150__ I ran a TCP scan (-sS) on what services were running on the machine, as well as OS detection, version detection, script scanning, and traceroute (-A). Results of the scan can be noticed below.
+<img class="img-responsive" src="/img/posts/printer/session-1-0.jpg" alt="">
 
-![Tr0ll nmap scan](/img/posts/tr0ll_images/selection_00112.png)
+<img class="img-responsive" src="/img/posts/printer/session-1-1.jpg" alt="">
 
-FTP, SSH, and HTTP were the only 3 services running on the machine. At first glance, two things immediately caught my attention. The first was that anonymous ftp was allowed and the other was a directory on port 80 called /secret. I decided to begin my search on port 80 (http) by browsing to the ip address of the target and seeing what came up.
+<img class="img-responsive" src="/img/posts/printer/first-bug.jpg" alt="Fixing the first bug">
 
-![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png)
+<img class="img-responsive" src="/img/posts/printer/board-fix.jpg" alt="Board fix">
 
-Alright, so doesn't look like anything is here. Lets see what happens when we append /secret to the url.
+<img class="img-responsive" src="/img/posts/printer/board.jpg" alt="control board">
 
-![Tr0ll port 80/secret](/img/posts/tr0ll_images/selection_00114.png)
+<img class="img-responsive" src="/img/posts/printer/session-1-2.jpg" alt="">
 
-Port 80 isn't looking too good, so I decided to see what I could get from ftp (port 21). Using the command: __ftp 192.168.116.150__ I was asked for a username: __anonymous__ and a password: __guest__ (could have put any password here as anonymous ftp doesn't validate credentials).
+<img class="img-responsive" src="/img/posts/printer/session-1-3.jpg" alt="">
 
-I was prompted "Login Successful" and used the __ls__ command to see what was in the directory. The only file that came up was one called __lol.pcap__.This file extension (.pcap) is commonly used for a packet capture file, commonly used by Wireshark. I grabbed the file and booted it up in Wireshark to see what I could find.
+<img class="img-responsive" src="/img/posts/printer/session-1-4.jpg" alt="">
 
-![Tr0ll ftp](/img/posts/tr0ll_images/selection_00115.png)
+<img class="img-responsive" src="/img/posts/printer/session-1-complete.jpg" alt="complete">
 
-Following the TCP Stream of the first packet, I was able to quickly recognize that a file called __secret_stuff.txt__ was exchanged.  In order to see what was contained inside of  __secret_stuff.txt__, I filtered out the pcap file using __ftp-data__ in order to rebuild the text file before the exchange.
-
-![Tr0ll wireshark](/img/posts/tr0ll_images/selection_00116.png)
-
-The first and last packet was the opening and closing of the ftp connection, so I focused my attention on the middle packet to see what was actually transferred.
-
-![tr0ll ftp-data](/img/posts/tr0ll_images/selection_002.png)
-
-Following the TCP Stream of the packet, I found that __secret_stuff.txt__ contained the following text.
-
-![tr0ll ftp-data 1](/img/posts/tr0ll_images/selection_00117.png)
-
-Obviously __sup3rs3cr3tdirlol__ stood out right away. Since I was finished with ftp, that meant that it was either going to be used for SSH or possibly HTTP. I decided to try appending __sup3rs3cr3tdirlol__ to the url __192.168.116.150/secret__
-
-![tr0ll supersecret try1](/img/posts/tr0ll_images/selection_00118.png)
-
-Not what I was looking for, so I decided to remove the __/secret__ from the url to see if __sup3rs3cr3tdirlol__ was it's own parent directory.
-
-![tr0ll supersecret success](/img/posts/tr0ll_images/selection_00119.png)
-
-Interesting... I grabbed the file to what information I could get from it. A quick __file__ of __roflmao__ told me it was a 32-bit executable. Let's see what results we can get from using the __strings__ command on the executable.
-
-![tr0ll file command](/img/posts/tr0ll_images/selection_00120.png)
-
-![tr0ll strings command](/img/posts/tr0ll_images/selection_00121.png)
-
-__"Find address 0x0856BF to proceed"__ Perhaps another directory on port 80?
-
-![tr0ll proceed to](/img/posts/tr0ll_images/selection_00122.png)
-
-This directory had two folders, one called __good_luck__ and another called __this_folder_contains_the_password__. The folder __good_luck__ contained a text file named __which_one_lol.txt__. The text file contained 10 items.
-
-![tr0ll good_luck](/img/posts/tr0ll_images/selection_00123.png)
-
-The folder __this_folder_contains_the_password__ had one text file called __Pass.text__. This text file only contained 1 item.
-
-![tr0ll pass.txt](/img/posts/tr0ll_images/selection_00124.png)
-
-At this point, it became pretty clear that this must be credentials for SSH as that was the only service I had yet to look at on the machine. I grabbed both text files (using __wget__) and decided that I'd use __hydra__ to brute force the SSH connection. I'd use __which_one_lol.txt__ as a username list and __"Good_job_:)"__ as the password.
-
-![tr0ll ssh](/img/posts/tr0ll_images/selection_00125.png)
-
-Looks like something is preventing us from brute forcing the connection. I looked around online and I think [Fail2Ban](http://en.wikipedia.org/wiki/Fail2ban) may be the culprit here. I tried the various combinations using the usernames and password but nothing worked. I looked back at the directories again and __this_folder_contains_the_password__ caught my eye again. The file it held was __Pass.txt__ so maybe the directory was supposed to be taken literally and __Pass.txt__ was the password. I tried the combinations of usernames but this time used __Pass.txt__ as the password.
-
-![tr0ll hydra success](/img/posts/tr0ll_images/selection_00126.png)
-
-Success! I pulled up a low privileged bash shell and starting looking around. I found an interesting file in __/opt__ called __lmao.py__ but didn't have the proper permissions to __cat__ the file. However, after a few minutes the connection dropped and I was presented with the following message:
-
-![tr0ll in ssh ](/img/posts/tr0ll_images/selection_00127.png)
-
-I started looking around in various directories and found a __fail2ban__ log in __/var/log__ which confirmed my suspicions that fail2ban was preventing brute forcing of the SSH connection.
-
-![tr0ll fail2ban log](/img/posts/tr0ll_images/selection_00128.png)
-
-I reconnected and took a look at the root directory and noticed that the __/tmp__ directory had full root access. I knew from past boot2root's that this was not normal and that this configuration was left purposely.
-
-![tr0ll tmp root access](/img/posts/tr0ll_images/selection_00129.png)
-
-At this point I knew three things:
-
-  1. I had a directory __/tmp__ with full root access
-
-  2. I had a file __lmao.py__ which was definitely important as there's no other reason it would be in the __/opt__ directory.
-
-  3. Finally there was some event causing my SSH connection to drop.
-
-I looked at __/var/log__ and decided to look at the __cronlog__. __Cron__ is a time based scheduler in Unix which can run scripts daily, monthly, etc... and it could be explaining why my SSH connection was dropping after so many minutes. If we look at the __cron__ table below, we can see that __cleaner.py__ is running every 2 minutes.
-
-![tr0ll cronlog](/img/posts/tr0ll_images/selection_00130.png)
-
-So I needed to find out where this file was so I could examine it. I ran the __find__ command and searched for __cleaner.py__ using the terminal's search function. Using the command __find -name cleaner.py__ I found the file in the directory __/lib/log/cleaner.py__.
-
-![tr0ll cleaner dir](/img/posts/tr0ll_images/selection_00131.png)
-
-After going to the directory, I noticed that I had permissions to read and write the file.
-
-![tr0ll cleaner perm](/img/posts/tr0ll_images/selection_0021.png)
-
-After using __cat__ on the file, itc looked like every two minutes, everything in the __/tmp__ was being deleted. However, I quickly saw how I could take advantage of this. Since this file had root privileges, I could rewrite the script to copy a shell to the tmp folder.
-
-![tr0ll cat cleaner.py](/img/posts/tr0ll_images/selection_00132.png)
-
-Finally, I waited for the cron job to drop the shell into the /tmp directory. I ran the shell script and then used the command __whoami__ and saw that I finally had root.
-
-![tr0ll whoami](/img/posts/tr0ll_images/selection_00133.png)
-
-A quick __cat__ of __/root/proof.txt__ gave me the proof I needed and my first boot2root was finally completed.
-
-![tr0ll complete](/img/posts/tr0ll_images/selection_00134.png)
-
-Thank you __Maleus__ for this boot2root. I enjoyed working on it.
+<img class="img-responsive" src="/img/posts/printer/print.jpg" alt="first print">
