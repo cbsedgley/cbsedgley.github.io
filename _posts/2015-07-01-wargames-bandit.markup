@@ -126,7 +126,7 @@ Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
 ![Bandit9](/img/posts/bandit_images/screen-shot-2015-03-17-at-4-23-12-pm.png)
 
-What I Did: Used __strings__ on __data.txt__ and appended __| grep '='__ to print all strings in the file beginning with __'='__
+What I Did: Used __strings__ on __data.txt__ and appended __|__ __grep__ __'='__ to print all strings in the file beginning with __'='__
 
 Level 10 Password: **truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk**
 
