@@ -153,10 +153,10 @@ a:focus {
 .intro {
     display: table;
     width: 100%;
-    height: auto;
+    height: 600px;
     padding: 100px 0;
     text-align: center;
-    color: #fff;
+    color: #000;
     background: url( {{ site.background-img }} ) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
