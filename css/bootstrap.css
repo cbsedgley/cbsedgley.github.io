@@ -3994,7 +3994,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav > li > a {
   padding-top: 10px;
-  padding-right: 5px;
+  padding-right: 85px;
   padding-bottom: 10px;
   line-height: 20px;
 }
