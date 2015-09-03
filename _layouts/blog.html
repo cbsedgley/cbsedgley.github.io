@@ -1,55 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-  {% include head.html %}
-
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-  {% include navigation.html %}
-
-  <section id="{{ page.title }}" class="container content-section text-center">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-
-      {{ page.content | markdownify }}
-
-      {% for post in paginator.posts %}
-        <h4 align="left"><strong>{{ post.date | date_to_string }}</strong> <small>. {{ post.category }} .</small> <a href="{{ post.url }}"> <strong>{{ post.title }} </strong> </a> <small><a href="{{ post.url }}#disqus_thread">Comments</a></small></h4>
-      {% endfor %}
-
-      <!-- Pagination links -->
-      <div class="pagination">
-
-        {% if paginator.previous_page and paginator.next_page%}
-          <h4>
-              <a href="{{ paginator.previous_page_path }}" class="previous">Newer Posts</a>  <a href="{{ paginator.next_page_path }}" class="next">Older Posts</a>
-          </h4>
-        {% endif %}
-
-        {% if paginator.previous_page %}
-          <h4><a href="{{ paginator.previous_page_path }}" class="previous">Newer Posts</a></h4>
-        {% endif %}
-
-        {% if paginator.next_page %}
-          <h4><a href="{{ paginator.next_page_path }}" class="next">Older Posts</a></h4>
-        {% endif %}
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="{{ page.title }}" class="container content-section text-center">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-	       {% include social-buttons.html %}
-      </div>
-    </div>
-  </section>
-
-  {% include footer.html %}
-
-  {% include js.html %}
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1347.57">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 10.0px Times; font-kerning: none}
+    span.s3 {text-decoration: underline ; font-kerning: none; color: #0000ee; -webkit-text-stroke: 0px #0000ee}
+    span.s4 {text-decoration: underline ; font-kerning: none}
+    span.s5 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">{% include head.html %} {% include navigation.html %}</span></p>
+<p class="p1"><span class="s1">{{ page.content | markdownify }} {% for post in paginator.posts %}</span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>{{ post.date | date_to_string }} </b></span><span class="s2"><b>. {{ post.category }} .</b></span><span class="s1"><b> </b><a href="file:///Users/cbsedgley/cbsedgley.github.io/_layouts/%7B%7B%20post.url%20%7D%7D"><span class="s3"><b>{{ post.title }}</b></span></a></span></h4>
+<p class="p1"><span class="s1">{% endfor %}</span></p>
+<p class="p1"><span class="s1">{% if paginator.previous_page and paginator.next_page%}</span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #0000ee; -webkit-text-stroke: #0000ee"><span class="s4"><a href="file:///Users/cbsedgley/cbsedgley.github.io/_layouts/%7B%7B%20paginator.previous_page_path%20%7D%7D"><b>Newer Posts</b></a></span><span class="s5"><b> </b><a href="file:///Users/cbsedgley/cbsedgley.github.io/_layouts/%7B%7B%20paginator.next_page_path%20%7D%7D"><span class="s3"><b>Older Posts</b></span></a><b><span class="Apple-converted-space"> </span></b></span></h4>
+<p class="p1"><span class="s1">{% endif %} {% if paginator.previous_page %}</span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #0000ee; -webkit-text-stroke: #0000ee"><span class="s4"><a href="file:///Users/cbsedgley/cbsedgley.github.io/_layouts/%7B%7B%20paginator.previous_page_path%20%7D%7D"><b>Newer Posts</b></a></span></h4>
+<p class="p1"><span class="s1">{% endif %} {% if paginator.next_page %}</span></p>
+<h4 style="margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px Times; color: #0000ee; -webkit-text-stroke: #0000ee"><span class="s4"><a href="file:///Users/cbsedgley/cbsedgley.github.io/_layouts/%7B%7B%20paginator.next_page_path%20%7D%7D"><b>Older Posts</b></a></span></h4>
+<p class="p1"><span class="s1">{% endif %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% include social-buttons.html %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% include footer.html %} {% include js.html %}<span class="Apple-converted-space"> </span></span></p>
 </body>
 </html>
