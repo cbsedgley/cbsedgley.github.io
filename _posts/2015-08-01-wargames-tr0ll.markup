@@ -24,7 +24,7 @@ FTP, SSH, and HTTP were the only 3 services running on the machine. At first gla
 ![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png)
 Alright, so doesn't look like anything is here. Lets see what happens when we append /secret to the url.
 
-<img src="/img/posts/tr0ll_images/selection_00114.png" alt="Tr0ll port 80/secret" style="width: 200px;"/>
+<img src="/img/posts/tr0ll_images/selection_00114.png" alt="Tr0ll port 80/secret" style="width: 600px; height: 600px;"/>
 
 Port 80 isn't looking too good, so I decided to see what I could get from ftp (port 21). Using the command: __ftp 192.168.116.150__ I was asked for a username: __anonymous__ and a password: __guest__ (could have put any password here as anonymous ftp doesn't validate credentials).
 
