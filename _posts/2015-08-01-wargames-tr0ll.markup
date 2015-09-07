@@ -9,46 +9,44 @@ I've decided that 2015 is the year I really jump into security and begin to hone
 
 When booting up tr0ll in VMware Fusion 7, I was presented with a login prompt shown below.
 
-<img src="/img/posts/tr0ll_images/screen-shot-2015-02-24-at-9-47-00-pm.png" alt="Tr0ll login" style="width: 770px; height: 171px;"/>
+![Tr0ll login](/img/posts/tr0ll_images/screen-shot-2015-02-24-at-9-47-00-pm.png)
 
 Nothing I can really do here, so I decided to boot up Kali and use arp-scan to find out the ip address of tr0ll. __IMPORTANT:__ Make sure the network adapter is set to NAT on tr0ll so it is allocated an ip addresss through the router's dhcp configuration.
 
-<img src="/img/posts/tr0ll_images/selection_00111.png" alt="Tr0ll arp-scan" style="width: 770px; height: 219px;"/>
+![Tr0ll arp-scan](/img/posts/tr0ll_images/selection_00111.png)
 
 In this case, tr0ll was given the ip of __192.168.116.150__ (Kali is using 192.168.116.254). From here, I decided to run a scan with nmap to see what services tr0ll was running. Using the command: __nmap -sS -A 192.168.116.150__ I ran a TCP scan (-sS) on what services were running on the machine, as well as OS detection, version detection, script scanning, and traceroute (-A). Results of the scan can be noticed below.
 
-<img src="/img/posts/tr0ll_images/selection_00112.png" alt="Tr0ll nmap scan" style="width: 770px; height: 579px;"/>
+![Tr0ll nmap scan](/img/posts/tr0ll_images/selection_00112.png)
 
 FTP, SSH, and HTTP were the only 3 services running on the machine. At first glance, two things immediately caught my attention. The first was that anonymous ftp was allowed and the other was a directory on port 80 called /secret. I decided to begin my search on port 80 (http) by browsing to the ip address of the target and seeing what came up.
 
-<img src="/img/posts/tr0ll_images/selection_00113.png" alt="Tr0ll port 80" style="width: 770px; height: 500px;"/>
-
+![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png)
 Alright, so doesn't look like anything is here. Lets see what happens when we append /secret to the url.
 
-<img src="/img/posts/tr0ll_images/selection_00114.png" alt="Tr0ll port 80/secret" style="width: 770px; height: 500px;"/>
+![Tr0ll port 80/secret](/img/posts/tr0ll_images/selection_00114.png)
 
 Port 80 isn't looking too good, so I decided to see what I could get from ftp (port 21). Using the command: __ftp 192.168.116.150__ I was asked for a username: __anonymous__ and a password: __guest__ (could have put any password here as anonymous ftp doesn't validate credentials).
 
 I was prompted "Login Successful" and used the __ls__ command to see what was in the directory. The only file that came up was one called __lol.pcap__.This file extension (.pcap) is commonly used for a packet capture file, commonly used by Wireshark. I grabbed the file and booted it up in Wireshark to see what I could find.
 
-<img src="/img/posts/tr0ll_images/selection_00115.png" alt="Tr0ll ftp" style="width: 770px; height: 361px;"/>
+![Tr0ll ftp](/img/posts/tr0ll_images/selection_00115.png)
 
 Following the TCP Stream of the first packet, I was able to quickly recognize that a file called __secret_stuff.txt__ was exchanged.  In order to see what was contained inside of  __secret_stuff.txt__, I filtered out the pcap file using __ftp-data__ in order to rebuild the text file before the exchange.
 
-<img src="/img/posts/tr0ll_images/selection_00116.png" alt="Tr0ll wireshark" style="width: 770px; height: 414px;"/>
+![Tr0ll wireshark](/img/posts/tr0ll_images/selection_00116.png)
 
 The first and last packet was the opening and closing of the ftp connection, so I focused my attention on the middle packet to see what was actually transferred.
 
-<img src="/img/posts/tr0ll_images/selection_002.png" alt="tr0ll ftp-data" style="width: 770px; height: 135px;"/>
+![tr0ll ftp-data](/img/posts/tr0ll_images/selection_002.png)
 
 Following the TCP Stream of the packet, I found that __secret_stuff.txt__ contained the following text.
 
-<img src="/img/posts/tr0ll_images/selection_00117.png" alt="tr0ll ftp-data 1" style="width: 770px; height: 108px;"/>
-
+![tr0ll ftp-data 1](/img/posts/tr0ll_images/selection_00117.png)
 
 Obviously __sup3rs3cr3tdirlol__ stood out right away. Since I was finished with ftp, that meant that it was either going to be used for SSH or possibly HTTP. I decided to try appending __sup3rs3cr3tdirlol__ to the url __192.168.116.150/secret__
 
-<img src="/img/posts/tr0ll_images/selection_00118.png" alt="tr0ll supersecret try1" style="width: 770px; height: 187px;"/>
+![tr0ll supersecret try1](/img/posts/tr0ll_images/selection_00118.png)
 
 Not what I was looking for, so I decided to remove the __/secret__ from the url to see if __sup3rs3cr3tdirlol__ was it's own parent directory.
 
