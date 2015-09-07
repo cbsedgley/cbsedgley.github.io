@@ -21,7 +21,7 @@ In this case, tr0ll was given the ip of __192.168.116.150__ (Kali is using 192
 
 FTP, SSH, and HTTP were the only 3 services running on the machine. At first glance, two things immediately caught my attention. The first was that anonymous ftp was allowed and the other was a directory on port 80 called /secret. I decided to begin my search on port 80 (http) by browsing to the ip address of the target and seeing what came up.
 
-![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png =721x219)
+![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png[width=219px])
 Alright, so doesn't look like anything is here. Lets see what happens when we append /secret to the url.
 
 ![Tr0ll port 80/secret](/img/posts/tr0ll_images/selection_00114.png)
