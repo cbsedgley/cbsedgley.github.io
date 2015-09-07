@@ -17,14 +17,14 @@ Nothing I can really do here, so I decided to boot up Kali and use arp-scan to 
 
 In this case, tr0ll was given the ip of __192.168.116.150__ (Kali is using 192.168.116.254). From here, I decided to run a scan with nmap to see what services tr0ll was running. Using the command: __nmap -sS -A 192.168.116.150__ I ran a TCP scan (-sS) on what services were running on the machine, as well as OS detection, version detection, script scanning, and traceroute (-A). Results of the scan can be noticed below.
 
-![Tr0ll nmap scan](/img/posts/tr0ll_images/selection_00112.png)
+<img src="/img/posts/tr0ll_images/selection_00112.png" alt="Tr0ll nmap scan" style="width: 770px; height: 500px;"/>
 
 FTP, SSH, and HTTP were the only 3 services running on the machine. At first glance, two things immediately caught my attention. The first was that anonymous ftp was allowed and the other was a directory on port 80 called /secret. I decided to begin my search on port 80 (http) by browsing to the ip address of the target and seeing what came up.
 
 ![Tr0ll port 80](/img/posts/tr0ll_images/selection_00113.png)
 Alright, so doesn't look like anything is here. Lets see what happens when we append /secret to the url.
 
-<img src="/img/posts/tr0ll_images/selection_00114.png" alt="Tr0ll port 80/secret" style="width: 600px; height: 600px;"/>
+<img src="/img/posts/tr0ll_images/selection_00114.png" alt="Tr0ll port 80/secret" style="width: 770px; height: 500px;"/>
 
 Port 80 isn't looking too good, so I decided to see what I could get from ftp (port 21). Using the command: __ftp 192.168.116.150__ I was asked for a username: __anonymous__ and a password: __guest__ (could have put any password here as anonymous ftp doesn't validate credentials).
 
