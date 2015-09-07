@@ -1,9 +1,9 @@
 ---
 layout: post
 section-type: post
-title: Wargames:Tr0ll
+title: Tr0ll
 category: tech
-tags: [ 'software', 'hardware' ]
+tags: [ 'wargames' ]
 ---
 I've decided that 2015 is the year I really jump into security and begin to hone my knowledge by taking on vulnerable virtual machines (vm's), security certificates, and offensive programming. I'm starting off the year by taking on my first boot2root: tr0ll. Having played around with various security tools in the past (nmap, metasploit, etc...) I felt tr0ll would be a great test on what I already know, as well as what I still need to learn and practice.
 
