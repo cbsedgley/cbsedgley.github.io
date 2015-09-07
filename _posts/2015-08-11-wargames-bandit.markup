@@ -352,7 +352,9 @@ Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
 <img src="/img/posts/bandit_images/screen-shot-2015-03-18-at-2-49-26-pm.png" alt="Bandit21" class="img-responsive"/>
 
-What I Did: I used the command __cd__ to see what __cronjobs__ were running in the directory __/etc/cron.d.__ I found one called __cronjob_bandit22__ ,which I figured was the one I wanted to look at. Using the __cat__ command, I could see that it was running a script called __cronjob_bandit22.sh__ in the directory __/usr/bin.__ After using the __cat__ command on the script, I could see that the script took the password stored in the file __/etc/bandit_pass/bandit22__ and output the results to a file in the __tmp__ directory called __t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv.__ Once I used the __cat__ command on the file, I received the password for Bandit22.
+What I Did: I used the command __cd__ to see what __cronjobs__ were running in the directory __/etc/cron.d.__ I found one called __cronjob_bandit22__ ,which I figured was the one I wanted to look at. Using the __cat__ command, I could see that it was running a script called __cronjob_bandit22.sh__ in the directory __/usr/bin.__ After using the __cat__ command on the script, I could see that the script took the password stored in the file __/etc/bandit_pass/bandit22__ and output the results to a file in the __tmp__ directory called 
+**t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv.**
+Once I used the __cat__ command on the file, I received the password for Bandit22.
 
 Level 22 Password: 
 **Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI**
@@ -367,7 +369,8 @@ Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
 <img src="/img/posts/bandit_images/screen-shot-2015-03-18-at-3-25-26-pm.png" alt="Bandit22" class="img-responsive"/>
 
-What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname__ "append" __md5sum__ "append" __cut -d__ __' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on **/tmp/_8ca319486bfbbc3663ea0fbe81326349**
+What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname__ "append" __md5sum__ "append" __cut -d__ __' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on 
+**/tmp/_8ca319486bfbbc3663ea0fbe81326349**
 and was returned the password for Bandit23.
 
 Level 23 Password: 
