@@ -17,7 +17,8 @@ Commands: __ssh__
 
 What I Did: __ssh__ into the home directory. List file using __ls__ and then used __cat__ to see what the file held.
 
-Level 1 Password: **boJ9jbbUNNfktd78OOpsqOltutMc3MY1**
+Level 1 Password:
+**boJ9jbbUNNfktd78OOpsqOltutMc3MY1**
 
 **BANDIT LEVEL 1**
 
@@ -29,7 +30,8 @@ Commands: __ls, cd, cat, file, du, find__
 
 What I Did: __ssh__ into the home directory. Since __"-"__ is a special character, you need to use the command __cd_ _./-__ in order to see the password for level 2.
 
-Level 2 Password: **CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9**
+Level 2 Password:
+**CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9**
 
 **BANDIT LEVEL 2**
 
