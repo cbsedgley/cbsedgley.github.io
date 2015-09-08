@@ -63,11 +63,15 @@ __"Find address 0x0856BF to proceed"__ Perhaps another directory on port 80?
 
 <img src="/img/posts/tr0ll_images/selection_00122.png" alt="tr0ll proceed to" class="img-responsive"/>
 
-This directory had two folders, one called __good_luck__ and another called __this_folder_contains_the_password__. The folder __good_luck__ contained a text file named __which_one_lol.txt__. The text file contained 10 items.
+This directory had two folders, one called __good_luck__ and another called
+__this_folder_contains_the_password__. 
+The folder __good_luck__ contained a text file named __which_one_lol.txt__. The text file contained 10 items.
 
 <img src="/img/posts/tr0ll_images/selection_00123.png" alt="tr0ll good_luck" class="img-responsive"/>
 
-The folder __this_folder_contains_the_password__ had one text file called __Pass.text__. This text file only contained 1 item.
+The folder
+__this_folder_contains_the_password__ 
+had one text file called __Pass.text__. This text file only contained 1 item.
 
 <img src="/img/posts/tr0ll_images/selection_00124.png" alt="tr0ll pass.txt" class="img-responsive"/>
 
