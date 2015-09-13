@@ -54,7 +54,7 @@ nop {
 
 a {
     color: #00ffff;
-    /* color: #219ab3; */
+    /* color: #fec503; */
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -321,10 +321,10 @@ a:focus {
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #219ab3;
+    border: 1px solid #fec503;
     outline: 0;
     color: #000;
-    background-color: #219ab3;
+    background-color: #fec503;
 }
 
 ul.banner-social-buttons {
