@@ -53,7 +53,7 @@ nop {
 }
 
 a {
-    color: #00ffff;
+    color: #000;
     /* color: #fec503; */
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
