@@ -11,7 +11,7 @@ Since I'm almost done with Bandit and have been stuck on level 25 for awhile, I 
 
 Level 0 Goal: _There is no information for this level, intentionally._
 
-<img src="/img/posts/leviathan_images/screen-shot-2015-03-23-at-3-35-32-pm.png" alt="Leviathan0" class="img-responsive"/>
+<img src="/img/posts/leviathan_images/leviathan0.png" alt="Leviathan0" class="img-responsive"/>
 
 What I Did: __ssh__ into the home directory. List files using __ls -la__ and then used __cd__ to see what the directory __.backup__ held. Listed the files and saw that the directory held a file called __bookmarks.html.__ After cat'ing the file, there really wasn't anything of use I could note right away. I decided to use the __grep__ command to search for __leviathan1__ since that was the password I needed to move on. I was returned a bookmark containing the password for Levianthan1.
 
