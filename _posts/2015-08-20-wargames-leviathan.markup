@@ -21,7 +21,7 @@ Level 1 Password: __rioGegei8m__
 
 **Level 1 Goal:** _There is no information for this level, intentionally._
 
-<img src="/img/posts/leviathan_images/screen-shot-2015-03-31-at-12-48-55-pm.png" alt="Leviathan2" class="img-responsive"/>
+<img src="/img/posts/leviathan_images/leviathan1" alt="Leviathan2" class="img-responsive"/>
 
 What I Did: A quick __ls -l__ of the home directory gave me an __32-bin LSB executable__ file called __check.__ When running the file, I was told to enter a password. I entered __test__ as the password to see what would occur and the program responded with __"Wrong password, Good Bye ..."__ I decided to see what I could find out using the command __ltrace__ which would intercept and record the processes made in the program. I quickly pressed __enter__ to proceed through the different processes and was promptly returned the string __strcmp("\n\n\n", "sex").__ It appeared that __sex__ was the password it was looking for, so I ran the file again and typed in the password __sex.__ I was presented with a shell and a quick run of __whoami__ told me I was __leviathan2.__ From here I used the __cat__ command on __/etc/leviathan_pass/leviathan2__ to obtain the password for leviathan2.
 
