@@ -41,15 +41,15 @@ Level 3 Password: **6eb5953d**
 
 Level 4 Goal: _This time Sam hardcoded the password into the script. However, the password is long and complex, and Sam is often forgetful. So he wrote a script that would email his password to him automatically in case he forgot. Here is the script:_
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-15-42-pm.png" alt="HTSBasic4" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4.png" alt="HTSBasic4" class="img-responsive"/>
 
 What I Did: I inspected the page source and saw that when I clicked on the button called __"Send password to Sam"__ ,a script would send an email to Sam at __sam@hackthissite.org.__ I changed the email to one that I own and when I pressed the button again, I was returned the following:
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-15-56-pm.png" alt="HTSBasic4-1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4-1.png" alt="HTSBasic4-1" class="img-responsive"/>
 
 I brought up my email and in my inbox was a message from sam containing the password for level 4.
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-16-14-pm.png" alt="HTSBasic4-2" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4-2.png" alt="HTSBasic4-2" class="img-responsive"/>
 
 Level 4 Password: **f93e29b0**
 
