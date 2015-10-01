@@ -65,15 +65,15 @@ Level 5 Password: **65c7574d**
 
 Level 6 Goal: _Network Security Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:_
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-15-45-pm.png" alt="HTSBasic6" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6.png" alt="HTSBasic6" class="img-responsive"/>
 
 What I Did: So we have a textbox that runs an encryption function on a string the user enters. I decided to see if I could pick up what algorithm the function was using, so as a test value, I entered the string __"aaaaaa"__ and was returned the following output:
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-17-18-pm.png" alt="HTSBasic6-1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6-1.png" alt="HTSBasic6-1" class="img-responsive"/>
 
 It seemed that the algorithms added +1, +2, +3... to each character, so it was pretty easy to determine how letters were handled. As for numbers (0-9) and symbols (;'[]<>), I entered another string using these characters and was returned the following output:
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-16-at-11-27-06-pm.png" alt="HTSBasic6-2" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6-2.png" alt="HTSBasic6-2" class="img-responsive"/>
 
 **finish**
 
