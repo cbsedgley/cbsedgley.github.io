@@ -11,7 +11,7 @@ HackThisSite Intro***
 
 Level 1 Goal: _This level is what we call "The Idiot Test", if you can't complete it, don't give up on learning all you can, but, don't go begging to someone else for the answer, thats one way to get you hated/made fun of. Enter the password and you can continue._
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-08-at-2-59-57-pm.png" alt="HTSBasic1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel1.png" alt="HTSBasic1" class="img-responsive"/>
 
 What I Did: Inspected a webpage element and found the password for level 1 in a comment found in the source code of the website.
 
@@ -29,7 +29,9 @@ Level 2 Password: **blank***
 
 Level 3 Goal: _This time Network Security Sam remembered to upload the password file, but there were deeper problems than that._
 
-<img src="/img/posts/hackthissite_images/screen-shot-2015-04-08-at-3-06-49-pm.png" alt="HTSBasic3" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel3.png" alt="HTSBasic3" class="img-responsive"/>
+
+<img src="/img/posts/hackthissite_images/htslevel3.png" alt="HTSBasic3-1" class="img-responsive"/>
 
 What I Did: When inspecting the source code of the webpage, I saw that there was a php file called __password.php.__ I checked to see what would happen if I appended __password.php__ to the url **https://www.hackthissite.org/missions** **/basic/3/** and I was returned the password for level 3 shown below.
 
