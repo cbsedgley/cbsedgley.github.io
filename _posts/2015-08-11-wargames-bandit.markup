@@ -119,7 +119,7 @@ Level 8 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-4-24-21-pm.png" alt="Bandit8" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel8.png" alt="Bandit8" class="img-responsive"/>
 
 What I Did: This level was pretty straight forward. First I used the __sort__ command on data.txt and appended __uniq -u__ to search for a uniq line in the file.
 
@@ -132,7 +132,7 @@ Level 9 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-4-23-12-pm.png" alt="Bandit9" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel9.png" alt="Bandit9" class="img-responsive"/>
 
 What I Did: Used __strings__ on __data.txt__ and appended __grep__ __'='__ to print all strings in the file beginning with __'='__
 
@@ -145,7 +145,7 @@ Level 10 Goal: _The password for the next level is stored in the file __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-4-21-26-pm.png" alt="Bandit10" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel10.png" alt="Bandit10" class="img-responsive"/>
 
 What I Did: This level was really easy. Just used the command __base64 -d data.txt__ to decode the base64 encoded data. The output was __"The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR"__
 
@@ -158,7 +158,7 @@ Level 11 Goal: _The password for the next level is stored in the file_ __data.t
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-4-15-50-pm.png" alt="Bandit11" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel11.png" alt="Bandit11" class="img-responsive"/>
 
 What I Did: After using __cat__ on __data.txt__ I received a string that had a ROT13 cipher applied to it. After reading up on ROT13, I discovered that the same cipher is used to encode and decode a string. Using the command __echo__ on the encrypted string and appending __tr 'A-Za-z' 'N-ZA-Mn-za-m'__ to the command, the encrypted string was decoded resulting in the output of __"The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu"__
 
@@ -171,35 +171,35 @@ Level 12 Goal: _The password for the next level is stored in the file_ __data.t
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-06-56-pm.png" alt="Bandit12" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12.png" alt="Bandit12" class="img-responsive"/>
 
 What I Did: This level sucked. Had to look up a hint because I was unsure what to do once I converted the hexdump using __xxd.__ First thing I did was output the results of the __xdd__ conversion to the directory __/tmp/output__ as __a.txt__ (you need to make the directory first using the __mkdir__ command). Once I used the __cat__ command, I could see that that I was still working with a compressed file.
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-10-29-pm.png" alt="Bandit12-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-1.png" alt="Bandit12-1" class="img-responsive"/>
 
 Using the __file__ command, I could see I was working with __gzip compressed data.__ I renamed the file __a.txt__ to __a.txt.gz__ so I could decompress the file using __gzip.__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-12-43-pm.png" alt="Bandit12-2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-2.png" alt="Bandit12-2" class="img-responsive"/>
 
 Once decompressed, I ran the __file__ command again and saw I working with __bzip2__ compressed data with a __block size = 900k.__ Ok, I renamed __a.txt__ to __a.txt.bz2__ so I could decompress the file using __bzip2.__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-15-28-pm.png" alt="Bandit12-3" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-3.png" alt="Bandit12-3" class="img-responsive"/>
 
 Back to working with __gzip__ again. I followed the same gzip process shown above and used the __file__ command on the file again and received the following:
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-17-32-pm.png" alt="Bandit12-4" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-4.png" alt="Bandit12-4" class="img-responsive"/>
 
 Now, I was working with a tar file. I renamed __a.txt__ to __a.txt.tar__ and decompressed using the __tar xf__ command.
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-20-07-pm.png" alt="Bandit12-5" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-5.png" alt="Bandit12-5" class="img-responsive"/>
 
 I extracted the file __data5.bin__ and ran the __file__ command again to see it was also a __POSIX tar archive.__ Using the same process as above, I received the following:
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-22-00-pm.png" alt="Bandit12-6" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-6.png" alt="Bandit12-6" class="img-responsive"/>
 
 Getting old now... Used the __bzip2__ process I've done multiple times...
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-5-26-08-pm.png" alt="Bandit12-7" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-7.png" alt="Bandit12-7" class="img-responsive"/>
 
 I continue this decompression mess using the various __bzip2, gzip, and tar__ methods until I finally end up with a file called __data8.bin__ with a file type being __ASCII txt.__ I ran the __cat__ command on the file and ended up with the string __"The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL".__ What an annoying level...
 
