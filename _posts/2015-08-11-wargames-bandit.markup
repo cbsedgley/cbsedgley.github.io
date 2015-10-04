@@ -368,7 +368,7 @@ Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 <img src="/img/posts/bandit_images/banditlevel22.png" alt="Bandit22" class="img-responsive"/>
 
 What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname__ "append" __md5sum__ "append" __cut -d__ __' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on 
-<span style="font-size:0.8em;">**/tmp/_8ca319486bfbbc3663ea0fbe81326349**
+<span style="font-size:0.8em;">**/tmp/_8ca319486bfbbc3663ea0fbe81326349**</span>
 and was returned the password for Bandit23.
 
 Level 23 Password: 
