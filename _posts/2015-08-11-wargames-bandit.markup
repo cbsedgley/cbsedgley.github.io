@@ -290,7 +290,7 @@ __NOTE:__ If you have solved this level and see __‘Byebye!’__ when trying to
 
 Commands: __cat, grep, ls, diff__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-8-52-26-pm.png" alt="Bandit17" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel17.png" alt="Bandit17" class="img-responsive"/>
 
 What I Did: Ran the command __diff__ between the two files and found the line that was changed. The top line has the password we want to use for Bandit18.
 
@@ -303,7 +303,7 @@ Level 18 Goal: _The password for the next level is stored in a file_ __readme__
 
 Commands: __ssh, ls, cat__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-9-02-39-pm.png" alt="Bandit18" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel18.png" alt="Bandit18" class="img-responsive"/>
 
 What I Did: Used the command __ssh -t bandit18@bandit.labs.overthewire.org /bin/sh__ to spawn a shell through a pseudoterminal which would bypass the __.bashrc__ file logging the user out.
 
@@ -316,7 +316,7 @@ Level 19 Goal: _To gain access to the next level, you should use the_ __setuid 
 
 Commands: __none provided in this level__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-17-at-10-26-04-pm.png" alt="Bandit19" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel19.png" alt="Bandit19" class="img-responsive"/>
 
 What I Did: **finish**
 
@@ -333,9 +333,9 @@ __NOTE 2:__ Try connecting to your own network daemon to see if it works as you 
 
 Commands: __ssh, nc, cat__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-18-at-2-38-06-pm.png" alt="Bandit20" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel20.png" alt="Bandit20" class="img-responsive"/>
 
-<img src="/img/posts/bandit_images/screen-shot-2015-03-18-at-2-37-59-pm.png" alt="Bandit20-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel20-1.png" alt="Bandit20-1" class="img-responsive"/>
 
 What I Did: Another straight forward level. Used the command __nc -l -p 1234__ to start a server on __localhost__ listening on __port 1234.__ I then used the command __./suconnect 1234__ to make the connection to the localhost. Once both the listening port and connection was made, I then sent the password from Bandit20 and was returned the password for Bandit21.
 
