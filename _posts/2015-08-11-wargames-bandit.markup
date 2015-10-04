@@ -11,7 +11,7 @@ Level 0 Goal: _The goal of this level is for you to log into the game using SSH
 
 Commands: __ssh__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-11-56-pm.png" alt="Bandit0" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel0.png" alt="Bandit0" class="img-responsive"/>
 
 What I Did: __ssh__ into the home directory. List file using __ls__ and then used __cat__ to see what the file held.
 
@@ -24,7 +24,7 @@ Level 1 Goal: _The password for the next level is stored in a file called **rea
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-10-47-pm.png" alt="Bandit1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel1.png" alt="Bandit1" class="img-responsive"/>
 
 What I Did: __ssh__ into the home directory. Since __"-"__ is a special character, you need to use the command __cd_ _./-__ in order to see the password for level 2.
 
@@ -37,7 +37,7 @@ Level 2 Goal: _The password for the next level is stored in a file called_ __sp
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-13-15-pm.png" alt="Bandit2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel2.png" alt="Bandit2" class="img-responsive"/>
 
 What I Did: __ssh__ into the home directory. Used __cat__ and then added double quotes __(" ")__ to escape the spaces in the filename.
 
@@ -50,7 +50,7 @@ Level 3 Goal: _The password for the next level is stored in a hidden file in th
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-22-37-pm.png" alt="Bandit3" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel3.png" alt="Bandit3" class="img-responsive"/>
 
 What I Did: __cd__ into the directory __inhere__. Used the command __ls -a__ so that hidden files were shown. Then used the __cat__ command on the file __.hidden__ to see the password for level 4.
 
@@ -63,9 +63,9 @@ Level 4 Goal: _The password for the next level is stored in the only human-read
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-27-27-pm.png" alt="Bandit4" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel4.png" alt="Bandit4" class="img-responsive"/>
 
-What I Did: __cd__ into the inhere directory but couldn't figure out to search for just human-readable files using the __du -h__ command. I just used __cat__ until I found the password for level 5.
+What I Did: __cd__ into the __inhere__ directory and used the __file__ command on all files in the directory which indicated that __./-file07__ contained ASCII text which indeed held the password for level 5.
 
 Level 5 Password: 
 **koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
@@ -76,7 +76,7 @@ Level 5 Goal: _The password for the next level is stored in a file somewhere un
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-30-38-pm.png" alt="Bandit5" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel5.png" alt="Bandit5" class="img-responsive"/>
 
 What I Did: used __ls__ to see what directories and files were in the directory __inhere__. Used the command __find -type f -size 1033c__ to find the file that met the properties mentioned above. Used the __cat__ command on the returned output which was __./maybehere07/.file2__ and was returned the password for level 6.
 
@@ -89,11 +89,11 @@ Level 6 Goal: _The password for the next level is stored_ __somewhere on the se
 
 Commands: __ls, cd, cat, file, du, find, grep__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-33-18-pm.png" alt="Bandit6" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6.png" alt="Bandit6" class="img-responsive"/>
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-33-41-pm.png" alt="Bandit6-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6-1.png" alt="Bandit6-1" class="img-responsive"/>
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-34-05-pm.png" alt="Bandit6-2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6-2.png" alt="Bandit6-2" class="img-responsive"/>
 
 What I Did: Nothing showed up in the first directory I was logged into, so I decided to __cd__ into the __root (/)__ directory. I than ran the command __find -type f -user bandit7 -group bandit6 -size 33c__ which met most of the properties mentioned in the level 6 goals. The result that caught my eye right away was __./var/lib/dpkg/info/bandit7.password__. I used the __cat__ command on the file and was given the password for level 7. 
 
