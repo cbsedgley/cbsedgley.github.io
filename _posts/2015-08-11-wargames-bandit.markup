@@ -228,7 +228,7 @@ Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 <img src="/img/posts/bandit_images/banditlevel14.png" alt="Bandit14" class="img-responsive"/>
 
 What I Did: Pretty straightforward. Copied down the password and use the command __telnet__ to open a connection and typed in __open localhost 30000__ to specify the connection is on port 30000. Then I just typed in 
-<span style="font-size:0.8em;">**4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e** and was presented with the password for Bandit15.
+<span style="font-size:0.8em;">**4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e**</span> and was presented with the password for Bandit15.
 
 <img src="/img/posts/bandit_images/banditlevel14-1.png" alt="Bandit14-1" class="img-responsive"/>
 
