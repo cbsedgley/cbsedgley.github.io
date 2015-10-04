@@ -13,6 +13,8 @@
 
         <h1 style="color:#00ffff"><strong>{{ page.title }}</strong></h1>
       	<h4><strong>{{ page.date | date_to_string }}</strong>
+          <small> . {{ page.category }} . </small>
+            {% for tag in page.tags %}
         </h4>
 
       	{{ page.content | markdownify }}
