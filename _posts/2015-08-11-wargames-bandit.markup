@@ -147,7 +147,7 @@ Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
 <img src="/img/posts/bandit_images/banditlevel10.png" alt="Bandit10" class="img-responsive"/>
 
-What I Did: This level was really easy. Just used the command __base64 -d data.txt__ to decode the base64 encoded data. The output was <span style="font-size:0.5em;">**"The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR"**
+What I Did: This level was really easy. Just used the command __base64 -d data.txt__ to decode the base64 encoded data. The output was <span style="font-size:0.8em;">**"The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR"**
 
 Level 11 Password: 
 <span style="font-size:0.8em;">**IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR**
@@ -228,7 +228,7 @@ Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 <img src="/img/posts/bandit_images/banditlevel14.png" alt="Bandit14" class="img-responsive"/>
 
 What I Did: Pretty straightforward. Copied down the password and use the command __telnet__ to open a connection and typed in __open localhost 30000__ to specify the connection is on port 30000. Then I just typed in 
-<span style="font-size:0.5em;">**4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e**</span> and was presented with the password for Bandit15.
+<span style="font-size:0.8em;">**4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e**</span> and was presented with the password for Bandit15.
 
 <img src="/img/posts/bandit_images/banditlevel14-1.png" alt="Bandit14-1" class="img-responsive"/>
 
