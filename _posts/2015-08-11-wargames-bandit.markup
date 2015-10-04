@@ -2,14 +2,12 @@
 layout: post
 section-type: post
 title: Bandit
-category: tech
-tags: [ 'wargames' ]
 ---
-Now that I've completed my first boot2root (tr0ll) I decided to start looking at some different websites I could practice my skills on. One site I kept hearing about was __overthewire.org__ so I finally checked it out. It recommended that I begin with the Bandit war game, so I will keep this post updated as a progress through the different levels of Bandit.
+Now that I've completed my first boot2root (tr0ll) I decided to start looking at some different websites I could practice my skills on. One site I kept hearing about was __[overthewire.org] (http://overthewire.org)__ so I finally checked it out. It recommended that I begin with the Bandit war game, so I will keep this post updated as a progress through the different levels of Bandit.
 
 **BANDIT LEVEL 0**
 
-Level 0 Goal: _The goal of this level is for you to log into the game using SSH. The host to which you need to connect is **bandit.labs.overthewire.org**. The username is __bandit0__ _and the password is_ __bandit0__. _Once logged in, go to the [Level 1](http://overthewire.org/wargames/bandit/bandit1.html) page to find out how to beat Level 1._
+Level 0 Goal: _The goal of this level is for you to log into the game using SSH. The host to which you need to connect is **bandit.labs.overthewire.org**. The username is __bandit0__ _and the password is_ __bandit0__. _Once logged in, go to the_ [Level 1](http://overthewire.org/wargames/bandit/bandit1.html) _page to find out how to beat Level 1._
 
 Commands: __ssh__
 
