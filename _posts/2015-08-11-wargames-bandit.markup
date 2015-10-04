@@ -106,7 +106,7 @@ Level 7 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/screen-shot-2015-02-24-at-9-36-31-pm.png" alt="Bandit7" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel7.png" alt="Bandit7" class="img-responsive"/>
 
 What I Did: Was given a text file called __data.txt__ and needed to find the password for the next level, which was next to the word __millionth__. I used the command __grep "millionth" data.txt__ and was returned the searched word with the password for level 8 next to it. 
 
