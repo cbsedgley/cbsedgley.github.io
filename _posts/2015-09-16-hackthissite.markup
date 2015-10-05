@@ -10,7 +10,7 @@ HackThisSite Intro***
 
 Level 1 Goal: _This level is what we call "The Idiot Test", if you can't complete it, don't give up on learning all you can, but, don't go begging to someone else for the answer, thats one way to get you hated/made fun of. Enter the password and you can continue._
 
-<img src="/img/posts/hackthissite_images/htslevel1.png" alt="HTSBasic1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel1.png" alt="HTSBasic1" class="img-responsive center-block"/>
 
 What I Did: Inspected a webpage element and found the password for level 1 in a comment found in the source code of the website.
 
@@ -28,11 +28,11 @@ Level 2 Password: **blank***
 
 Level 3 Goal: _This time Network Security Sam remembered to upload the password file, but there were deeper problems than that._
 
-<img src="/img/posts/hackthissite_images/htslevel3.png" alt="HTSBasic3" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel3.png" alt="HTSBasic3" class="img-responsive center-block"/>
 
 What I Did: When inspecting the source code of the webpage, I saw that there was a php file called __password.php.__ I checked to see what would happen if I appended __password.php__ to the url **https://www.hackthissite.org/missions** **/basic/3/** and I was returned the password for level 3 shown below.
 
-<img src="/img/posts/hackthissite_images/htslevel3-1.png" alt="HTSBasic3-1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel3-1.png" alt="HTSBasic3-1" class="img-responsive center-block"/>
 
 Level 3 Password: **6eb5953d**
 
@@ -40,15 +40,15 @@ Level 3 Password: **6eb5953d**
 
 Level 4 Goal: _This time Sam hardcoded the password into the script. However, the password is long and complex, and Sam is often forgetful. So he wrote a script that would email his password to him automatically in case he forgot. Here is the script:_
 
-<img src="/img/posts/hackthissite_images/htslevel4.png" alt="HTSBasic4" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4.png" alt="HTSBasic4" class="img-responsive center-block"/>
 
 What I Did: I inspected the page source and saw that when I clicked on the button called __"Send password to Sam"__ ,a script would send an email to Sam at __sam@hackthissite.org.__ I changed the email to one that I own and when I pressed the button again, I was returned the following:
 
-<img src="/img/posts/hackthissite_images/htslevel4-1.png" alt="HTSBasic4-1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4-1.png" alt="HTSBasic4-1" class="img-responsive center-block"/>
 
 I brought up my email and in my inbox was a message from sam containing the password for level 4.
 
-<img src="/img/posts/hackthissite_images/htslevel4-2.png" alt="HTSBasic4-2" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel4-2.png" alt="HTSBasic4-2" class="img-responsive center-block"/>
 
 Level 4 Password: **f93e29b0**
 
@@ -64,15 +64,15 @@ Level 5 Password: **65c7574d**
 
 Level 6 Goal: _Network Security Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:_
 
-<img src="/img/posts/hackthissite_images/htslevel6.png" alt="HTSBasic6" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6.png" alt="HTSBasic6" class="img-responsive center-block"/>
 
 What I Did: So we have a textbox that runs an encryption function on a string the user enters. I decided to see if I could pick up what algorithm the function was using, so as a test value, I entered the string __"aaaaaa"__ and was returned the following output:
 
-<img src="/img/posts/hackthissite_images/htslevel6-1.png" alt="HTSBasic6-1" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6-1.png" alt="HTSBasic6-1" class="img-responsive center-block"/>
 
 It seemed that the algorithms added +1, +2, +3... to each character, so it was pretty easy to determine how letters were handled. As for numbers (0-9) and symbols (;'[]<>), I entered another string using these characters and was returned the following output:
 
-<img src="/img/posts/hackthissite_images/htslevel6-2.png" alt="HTSBasic6-2" class="img-responsive"/>
+<img src="/img/posts/hackthissite_images/htslevel6-2.png" alt="HTSBasic6-2" class="img-responsive center-block"/>
 
 **finish**
 

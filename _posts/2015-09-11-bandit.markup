@@ -12,7 +12,7 @@ Level 0 Goal: _The goal of this level is for you to log into the game using SSH
 
 Commands: __ssh__
 
-<img src="/img/posts/bandit_images/banditlevel0.png" alt="Bandit0" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel0.png" alt="Bandit0" class="img-responsive center-block"/>
 
 What I Did: __ssh__ into the home directory. List file using __ls__ and then used __cat__ to see what the file held.
 
@@ -25,7 +25,7 @@ Level 1 Goal: _The password for the next level is stored in a file called **rea
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/banditlevel1.png" alt="Bandit1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel1.png" alt="Bandit1" class="img-responsive center-block"/>
 
 What I Did: __ssh__ into the home directory. Since __"-"__ is a special character, you need to use the command __cd_ _./-__ in order to see the password for level 2.
 
@@ -38,7 +38,7 @@ Level 2 Goal: _The password for the next level is stored in a file called_ __sp
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/banditlevel2.png" alt="Bandit2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel2.png" alt="Bandit2" class="img-responsive center-block"/>
 
 What I Did: __ssh__ into the home directory. Used __cat__ and then added double quotes __(" ")__ to escape the spaces in the filename.
 
@@ -51,7 +51,7 @@ Level 3 Goal: _The password for the next level is stored in a hidden file in th
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/banditlevel3.png" alt="Bandit3" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel3.png" alt="Bandit3" class="img-responsive center-block"/>
 
 What I Did: __cd__ into the directory __inhere__. Used the command __ls -a__ so that hidden files were shown. Then used the __cat__ command on the file __.hidden__ to see the password for level 4.
 
@@ -64,7 +64,7 @@ Level 4 Goal: _The password for the next level is stored in the only human-read
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/banditlevel4.png" alt="Bandit4" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel4.png" alt="Bandit4" class="img-responsive center-block"/>
 
 What I Did: __cd__ into the __inhere__ directory and used the __file__ command on all files in the directory which indicated that __./-file07__ contained ASCII text which indeed held the password for level 5.
 
@@ -77,7 +77,7 @@ Level 5 Goal: _The password for the next level is stored in a file somewhere un
 
 Commands: __ls, cd, cat, file, du, find__
 
-<img src="/img/posts/bandit_images/banditlevel5.png" alt="Bandit5" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel5.png" alt="Bandit5" class="img-responsive center-block"/>
 
 What I Did: used __ls__ to see what directories and files were in the directory __inhere__. Used the command __find -type f -size 1033c__ to find the file that met the properties mentioned above. Used the __cat__ command on the returned output which was __./maybehere07/.file2__ and was returned the password for level 6.
 
@@ -90,11 +90,11 @@ Level 6 Goal: _The password for the next level is stored_ __somewhere on the se
 
 Commands: __ls, cd, cat, file, du, find, grep__
 
-<img src="/img/posts/bandit_images/banditlevel6.png" alt="Bandit6" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6.png" alt="Bandit6" class="img-responsive center-block"/>
 
-<img src="/img/posts/bandit_images/banditlevel6-1.png" alt="Bandit6-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6-1.png" alt="Bandit6-1" class="img-responsive center-block"/>
 
-<img src="/img/posts/bandit_images/banditlevel6-2.png" alt="Bandit6-2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel6-2.png" alt="Bandit6-2" class="img-responsive center-block"/>
 
 What I Did: Nothing showed up in the first directory I was logged into, so I decided to __cd__ into the __root (/)__ directory. I than ran the command __find -type f -user bandit7 -group bandit6 -size 33c__ which met most of the properties mentioned in the level 6 goals. The result that caught my eye right away was <span style="font-size:0.8em;">**./var/lib/dpkg/info/bandit7.password**</span>. I used the __cat__ command on the file and was given the password for level 7. 
 
@@ -107,7 +107,7 @@ Level 7 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/banditlevel7.png" alt="Bandit7" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel7.png" alt="Bandit7" class="img-responsive center-block"/>
 
 What I Did: Was given a text file called __data.txt__ and needed to find the password for the next level, which was next to the word __millionth__. I used the command __grep "millionth" data.txt__ and was returned the searched word with the password for level 8 next to it. 
 
@@ -120,7 +120,7 @@ Level 8 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/banditlevel8.png" alt="Bandit8" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel8.png" alt="Bandit8" class="img-responsive center-block"/>
 
 What I Did: This level was pretty straight forward. First I used the __sort__ command on data.txt and appended __uniq -u__ to search for a uniq line in the file.
 
@@ -133,7 +133,7 @@ Level 9 Goal: _The password for the next level is stored in the file_ __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/banditlevel9.png" alt="Bandit9" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel9.png" alt="Bandit9" class="img-responsive center-block"/>
 
 What I Did: Used __strings__ on __data.txt__ and appended __grep__ __'='__ to print all strings in the file beginning with __'='__
 
@@ -146,7 +146,7 @@ Level 10 Goal: _The password for the next level is stored in the file __data.tx
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/banditlevel10.png" alt="Bandit10" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel10.png" alt="Bandit10" class="img-responsive center-block"/>
 
 What I Did: This level was really easy. Just used the command __base64 -d data.txt__ to decode the base64 encoded data. The output was <span style="font-size:0.8em;">**"The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR"**
 
@@ -159,7 +159,7 @@ Level 11 Goal: _The password for the next level is stored in the file_ __data.t
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd__
 
-<img src="/img/posts/bandit_images/banditlevel11.png" alt="Bandit11" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel11.png" alt="Bandit11" class="img-responsive center-block"/>
 
 What I Did: After using __cat__ on __data.txt__ I received a string that had a ROT13 cipher applied to it. After reading up on ROT13, I discovered that the same cipher is used to encode and decode a string. Using the command __echo__ on the encrypted string and appending __tr 'A-Za-z' 'N-ZA-Mn-za-m'__ to the command, the encrypted string was decoded resulting in the output of <span style="font-size:0.8em;">**"The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu"**
 
@@ -172,35 +172,35 @@ Level 12 Goal: _The password for the next level is stored in the file_ __data.t
 
 Commands: __grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv__
 
-<img src="/img/posts/bandit_images/banditlevel12.png" alt="Bandit12" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12.png" alt="Bandit12" class="img-responsive center-block"/>
 
 What I Did: This level sucked. Had to look up a hint because I was unsure what to do once I converted the hexdump using __xxd.__ First thing I did was output the results of the __xdd__ conversion to the directory __/tmp/output__ as __a.txt__ (you need to make the directory first using the __mkdir__ command). Once I used the __cat__ command, I could see that that I was still working with a compressed file.
 
-<img src="/img/posts/bandit_images/banditlevel12-1.png" alt="Bandit12-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-1.png" alt="Bandit12-1" class="img-responsive center-block"/>
 
 Using the __file__ command, I could see I was working with __gzip compressed data.__ I renamed the file __a.txt__ to __a.txt.gz__ so I could decompress the file using __gzip.__
 
-<img src="/img/posts/bandit_images/banditlevel12-2.png" alt="Bandit12-2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-2.png" alt="Bandit12-2" class="img-responsive center-block"/>
 
 Once decompressed, I ran the __file__ command again and saw I working with __bzip2__ compressed data with a __block size = 900k.__ Ok, I renamed __a.txt__ to __a.txt.bz2__ so I could decompress the file using __bzip2.__
 
-<img src="/img/posts/bandit_images/banditlevel12-3.png" alt="Bandit12-3" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-3.png" alt="Bandit12-3" class="img-responsive center-block"/>
 
 Back to working with __gzip__ again. I followed the same gzip process shown above and used the __file__ command on the file again and received the following:
 
-<img src="/img/posts/bandit_images/banditlevel12-4.png" alt="Bandit12-4" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-4.png" alt="Bandit12-4" class="img-responsive center-block"/>
 
 Now, I was working with a tar file. I renamed __a.txt__ to __a.txt.tar__ and decompressed using the __tar xf__ command.
 
-<img src="/img/posts/bandit_images/banditlevel12-5.png" alt="Bandit12-5" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-5.png" alt="Bandit12-5" class="img-responsive center-block"/>
 
 I extracted the file __data5.bin__ and ran the __file__ command again to see it was also a __POSIX tar archive.__ Using the same process as above, I received the following:
 
-<img src="/img/posts/bandit_images/banditlevel12-6.png" alt="Bandit12-6" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-6.png" alt="Bandit12-6" class="img-responsive center-block"/>
 
 Getting old now... Used the __bzip2__ process I've done multiple times...
 
-<img src="/img/posts/bandit_images/banditlevel12-7.png" alt="Bandit12-7" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel12-7.png" alt="Bandit12-7" class="img-responsive center-block"/>
 
 I continue this decompression mess using the various __bzip2, gzip, and tar__ methods until I finally end up with a file called __data8.bin__ with a file type being __ASCII txt.__ I ran the __cat__ command on the file and ended up with the string **"The password is** <span style="font-size:0.8em;">8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL".** What an annoying level...
 
@@ -213,7 +213,7 @@ Level 13 Goal: _The password for the next level is stored in_ __/etc/bandit_pas
 
 Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 
-<img src="/img/posts/bandit_images/banditlevel13.png" alt="Bandit13" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel13.png" alt="Bandit13" class="img-responsive center-block"/>
 
 What I Did: Once connected to bandit13, I could see I needed to utilize a private ssh key called __sshkey.private__ to connect to bandit14. I used FileZilla to grab the key (couldn't get __scp__ to work for whatever reason), I then used the command __ssh -i sshkey.private bandit14@bandit.labs.overthewire.org.__ It gave some error saying I shouldn't be using shared private keys or something. I just appended __sudo__ to the beginning of the command to see if I could override the error, which I was able to successfully do.
 
@@ -226,12 +226,12 @@ Level 14 Goal: _The password for the next level can be retrieved by submitting 
 
 Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 
-<img src="/img/posts/bandit_images/banditlevel14.png" alt="Bandit14" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel14.png" alt="Bandit14" class="img-responsive center-block"/>
 
 What I Did: Pretty straightforward. Copied down the password and use the command __telnet__ to open a connection and typed in __open localhost 30000__ to specify the connection is on port 30000. Then I just typed in 
 <span style="font-size:0.8em;">**4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e**</span> and was presented with the password for Bandit15.
 
-<img src="/img/posts/bandit_images/banditlevel14-1.png" alt="Bandit14-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel14-1.png" alt="Bandit14-1" class="img-responsive center-block"/>
 
 Level 15 Password: 
 <span style="font-size:0.8em;">**BfMYroe26WYalil77FoDi9qh59eK5xNr**
@@ -244,7 +244,7 @@ __Helpful note:__ _Getting_ __“HEARTBEATING”__ _and_ __“Read R BLOCK”?__
 
 Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 
-<img src="/img/posts/bandit_images/banditlevel15.png" alt="Bandit15" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel15.png" alt="Bandit15" class="img-responsive center-block"/>
 
 What I Did: Wanted to see what would happen if I used the process for Bandit14 on Bandit15. I knew it was most likely not going to work and I received the following error message:
 
@@ -254,15 +254,15 @@ __140737354045088:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version numb
 
 I then looked up ways for telnet to communicate over ssl and found that __OpenSSL__ has an SSL tool. Using the command __openssl s_client -connect localhost:30001__ I procured the following output.
 
-<img src="/img/posts/bandit_images/banditlevel15-1.png" alt="Bandit15-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel15-1.png" alt="Bandit15-1" class="img-responsive center-block"/>
 
 I then tried to pass the Bandit15 password and received the following output...
 
-<img src="/img/posts/bandit_images/banditlevel15-2.png" alt="Bandit15-2" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel15-2.png" alt="Bandit15-2" class="img-responsive center-block"/>
 
 I was receiving the errors warned about in the level goal, so that some good news. I appended __-quiet__ to the end of the command to look like __openssl s_client -connect localhost:30001 -quiet__ and once I entered the Bandit15 password, I received the following output.
 
-<img src="/img/posts/bandit_images/banditlevel15-3.png" alt="Bandit15-3" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel15-3.png" alt="Bandit15-3" class="img-responsive center-block"/>
 
 Level 16 Password: 
 <span style="font-size:0.8em;">**cluFn7wTiGryunymYOu4RcffSxQluehd**
@@ -273,11 +273,11 @@ Level 16 Goal: _The password for the next level can be retrieved by submitting 
 
 Commands: __ssh, telnet, nc, openssl, s_client, nmap__
 
-<img src="/img/posts/bandit_images/banditlevel16.png" alt="Bandit16" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel16.png" alt="Bandit16" class="img-responsive center-block"/>
 
 What I Did: Using __nmap__ I ran a scan on all the ports between 31000 and 32000 and got back results that __5__ were open. From here it was just trial and error using the previous command from Bandit16 __openssl s_client -connect localhost:(testing each port number shown in the picture above).__ Port 31790 returned the response shown below when I entered the password for Bandit16.
 
-<img src="/img/posts/bandit_images/banditlevel16-1.png" alt="Bandit16-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel16-1.png" alt="Bandit16-1" class="img-responsive center-block"/>
 
 I took this RSA Private Key and copied it to a file called Bandit17 because I knew I was going to have to do a private key login similar to Bandit14. I created a file in __/tmp__ called __ssh.private__ and copied the RSA into it using __nano.__ I then changed the permissions using __chmod 600__ and finally gained a shell on Bandit17 using the command __ssh -i ssh.private bandit17@localhost__
 
@@ -292,7 +292,7 @@ __NOTE:__ If you have solved this level and see __‘Byebye!’__ when trying to
 
 Commands: __cat, grep, ls, diff__
 
-<img src="/img/posts/bandit_images/banditlevel17.png" alt="Bandit17" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel17.png" alt="Bandit17" class="img-responsive center-block"/>
 
 What I Did: Ran the command __diff__ between the two files and found the line that was changed. The top line has the password we want to use for Bandit18.
 
@@ -305,7 +305,7 @@ Level 18 Goal: _The password for the next level is stored in a file_ __readme__
 
 Commands: __ssh, ls, cat__
 
-<img src="/img/posts/bandit_images/banditlevel18.png" alt="Bandit18" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel18.png" alt="Bandit18" class="img-responsive center-block"/>
 
 What I Did: Used the command __ssh -t bandit18@bandit.labs.overthewire.org /bin/sh__ to spawn a shell through a pseudoterminal which would bypass the __.bashrc__ file logging the user out.
 
@@ -318,7 +318,7 @@ Level 19 Goal: _To gain access to the next level, you should use the_ __setuid 
 
 Commands: __none provided in this level__
 
-<img src="/img/posts/bandit_images/banditlevel19.png" alt="Bandit19" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel19.png" alt="Bandit19" class="img-responsive center-block"/>
 
 What I Did: **finish**
 
@@ -335,9 +335,9 @@ __NOTE 2:__ Try connecting to your own network daemon to see if it works as you 
 
 Commands: __ssh, nc, cat__
 
-<img src="/img/posts/bandit_images/banditlevel20.png" alt="Bandit20" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel20.png" alt="Bandit20" class="img-responsive center-block"/>
 
-<img src="/img/posts/bandit_images/banditlevel20-1.png" alt="Bandit20-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel20-1.png" alt="Bandit20-1" class="img-responsive center-block"/>
 
 What I Did: Another straight forward level. Used the command __nc -l -p 1234__ to start a server on __localhost__ listening on __port 1234.__ I then used the command __./suconnect 1234__ to make the connection to the localhost. Once both the listening port and connection was made, I then sent the password from Bandit20 and was returned the password for Bandit21.
 
@@ -350,7 +350,7 @@ Level 21 Goal: _A program is running automatically at regular intervals from_ _
 
 Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
-<img src="/img/posts/bandit_images/banditlevel21.png" alt="Bandit21" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel21.png" alt="Bandit21" class="img-responsive center-block"/>
 
 What I Did: I used the command __cd__ to see what __cronjobs__ were running in the directory __/etc/cron.d.__ I found one called __cronjob_bandit22__ ,which I figured was the one I wanted to look at. Using the __cat__ command, I could see that it was running a script called __cronjob_bandit22.sh__ in the directory __/usr/bin.__ After using the __cat__ command on the script, I could see that the script took the password stored in the file __/etc/bandit_pass/bandit22__ and output the results to a file in the __tmp__ directory called 
 **t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv.**
@@ -367,7 +367,7 @@ __NOTE:__ Looking at shell scripts written by other people is a very useful skil
 
 Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
-<img src="/img/posts/bandit_images/banditlevel22.png" alt="Bandit22" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel22.png" alt="Bandit22" class="img-responsive center-block"/>
 
 What I Did: Again, I checked out the cronjobs running in the directory __/etc/cron.d.__ My target this time was clearly __cronjob_bandit23.__ A quick __cat__ of the cronjob told me that it ran the script __cronjob_bandit23.sh__ under the directory __/usr/bin.__ Using the __cat__ command again I saw that it stored the password for Bandit23 in a file that was a md5 has of the following information: __echo I am user $myname__ "append" __md5sum__ "append" __cut -d__ __' ' -f 1.__ I replaced the __$myname__ with __bandit23__ and was returned the following ASCII file: __8ca319486bfbbc3663ea0fbe81326349.__ I then used the __cat__ command on 
 <span style="font-size:0.8em;">**/tmp/_8ca319486bfbbc3663ea0fbe81326349**</span>
@@ -386,9 +386,9 @@ __NOTE 2:__ Keep in mind that your shell script is removed once executed, so you
 
 Commands: __cron, crontab, crontab(5) (use “man 5 crontab” to access this)__
 
-<img src="/img/posts/bandit_images/banditlevel23.png" alt="Bandit23" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel23.png" alt="Bandit23" class="img-responsive center-block"/>
 
-<img src="/img/posts/bandit_images/banditlevel23-1.png" alt="Bandit23-1" class="img-responsive"/>
+<img src="/img/posts/bandit_images/banditlevel23-1.png" alt="Bandit23-1" class="img-responsive center-block"/>
 
 What I Did: Found the password in a file under the directory __poop/poop1__ called __pass.txt.__ Going to redo this one eventually creating the script like I was supposed to haha.
 
