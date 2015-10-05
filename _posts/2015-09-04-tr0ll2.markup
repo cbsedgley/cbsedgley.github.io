@@ -1,7 +1,7 @@
 ---
 layout: post
 section-type: post
-title: VulnHub: Tr0ll 2
+title: VulnHub (Tr0ll 2)
 category: ongoing
 ---
 After completing the first boot2root in the tr0ll series, I decided to try my luck on the second. I booted up the vm and ran the command __arp-scan --localnet__ to find out the IP address. I than ran an nmap scan (__nmap -sS -A 192.168.116.151__) to see what services were running.
