@@ -10,6 +10,11 @@ This post will address the different methods you can take to bypass wifi-time re
 be splitting this post into three sections to cover the methods most commonly used for Windows OS (XP,Vista,7,and 10), Linux OS (too many to list), and OSX (Lion, Mavericks, Yosemite, etc.).
 Below are some pictures of what typical wifi-time restrictions look like:
 
+<img src="/img/posts/spoofmac/xfinitysignup.png" alt="XfinitySignUp" class="img-responsive"/>
+
 <img src="/img/posts/spoofmac/xfinity.png" alt="Xfinity" class="img-responsive"/>
+
+Any hotspots **commonly** named "xfinitywifi" (saying commonly because hotspots could be spoofed, so be weary), are most likely owned by the ISP Comcast. They've been so generous to offer a
+complimentary hour of free internet by just providing an email address (you don't need to validate so come up with any random one) and a zip code (again could be any valid one). 
 
 <img src="/img/posts/spoofmac/panera.png" alt="Panera" class="img-responsive"/>
