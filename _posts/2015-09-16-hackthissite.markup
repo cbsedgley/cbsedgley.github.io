@@ -38,9 +38,7 @@ Level 3 Password: **74106e27**
 
 **BASIC LEVEL 4**
 
-Level 4 Goal: _This time Sam hardcoded the password into the script. However, the password is long and complex, and Sam is often forgetful. So he wrote a script that would email his password to him automatically in case he forgot.
-
-<img src="/img/posts/hackthissite_images/htslevel4-3.png" alt="HTSBasic4-3" class="img-responsive center-block"/>
+Level 4 Goal: _This time Sam hardcoded the password into the script. However, the password is long and complex, and Sam is often forgetful. So he wrote a script that would email his password to him automatically in case he forgot._
 
 <img src="/img/posts/hackthissite_images/htslevel4.png" alt="HTSBasic4" class="img-responsive center-block"/>
 
