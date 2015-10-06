@@ -4,7 +4,7 @@ section-type: post
 title: Spoofing Your Mac Address
 category: spoofing
 ---
-<img src="/img/posts/spoofmac/timelimit.png" alt="TimeLimit" align="center"/>
+<img src="/img/posts/spoofmac/timelimit.png" alt="TimeLimit" class="img-responsive center-block"/>
 
 This post will address the different methods you can take to bypass wifi-time restrictions commonly found in coffee shops, airports, xfinity hotspots, etc. I will
 be splitting this post into three sections to cover the methods most commonly used for Windows OS (XP,Vista,7,and 10), Linux OS (too many to list), and OSX (Lion, Mavericks, Yosemite, etc.).
