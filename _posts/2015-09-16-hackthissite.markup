@@ -32,8 +32,6 @@ Level 3 Goal: _This time Network Security Sam remembered to upload the password
 
 What I Did: When inspecting the source code of the webpage, I saw that there was a php file called __password.php.__ I checked to see what would happen if I appended __password.php__ to the url **https://www.hackthissite.org/** **missions/basic/3/** and I was returned the password for level 3 shown below.
 
-<img src="/img/posts/hackthissite_images/htslevel3-1.png" alt="HTSBasic3-1" class="img-responsive center-block"/>
-
 Level 3 Password: **74106e27**
 
 **BASIC LEVEL 4**
