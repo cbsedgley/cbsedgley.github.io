@@ -16,4 +16,12 @@ Nothing too suspicious here after viewing the webpage's source code. I was met w
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_source.png" alt="Tr0ll 2 port 80 source code" class="img-responsive center-block"/>
 
-I decided to take a look at ftp on port 21 and more specifically at the version it was running _vsftpd 2.0.8_. After googling _vsftpd 2.0.8 exploit, I was met with several Tr0ll 2 walkthroughs mentioning _exploit_ and _ftp_ so I figured I was on the right track. I booted up metasploit to see if it had any exploits for this service.
+The next thing I looked for was a _robots.txt_ file to see if there were any directories a spider shouldn't be crawling. I found a list of potential directories to visit.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_robots.png" alt="Tr0ll 2 port 80 robots text file" class="img-responsive center-block"/>
+
+The first directory called _noob_ displayed the following image. I felt like I was going to be noticing a pattern with the following directories to come.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_noob.png" alt="Tr0ll 2 port 80 noob" class="img-responsive center-block"/>
+
+The next two directories, _nope_ and _try harder_ came back 404, but the fourth called _keep trying_ displayed the same familiar image as noob.
