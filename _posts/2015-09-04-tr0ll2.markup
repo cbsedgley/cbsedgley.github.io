@@ -12,7 +12,6 @@ Like the last tr0ll vm, I decided to start my analysis on port 80. I opened up 
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_port80.png" alt="Tr0ll 2 port 80" class="img-responsive center-block"/>
  
-
 Nothing too suspicious here after viewing the webpage's source code. I was met with the message _Nothing here, Try Harder!_, with _Try Harder!_ being a common montra found in the OSCP courses.
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_source.png" alt="Tr0ll 2 port 80 source code" class="img-responsive center-block"/>
