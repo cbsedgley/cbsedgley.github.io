@@ -44,3 +44,14 @@ When opening the text file _answers.txt_ I was presented with a huge list of str
 I ran the following command to decode the entire list and write it out to the text file _output.txt_.
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_base64_decode.png" alt="Tr0ll 2 base64" class="img-responsive center-block"/>
+
+Now I had a huge list of human-readable strings, which I assumed were going to help me get access through ftp or ssh. I decided to start with ftp first, by using the list along with _Hyrda_ to bruteforce the username and password. Only 9 billion possible combinations to try...
+Using the command below, I used _output.txt_ as a list to test against the username and password.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_hydra_code.png" alt="Tr0ll 2 hydra bruteforce ftp" class="img-responsive center-block"/>
+
+32 hours to test all possible combinations... I started to think I wasn't going about this the way. Maybe the list only contains possible passwords and the username is static?
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_hydra.png" alt="Tr0ll 2 hydra bruteforce ftp" class="img-responsive center-block"/>
+
+In the first tr0ll vm, when I used hydra to bruteforce ssh, I had one constant for the password and a list to test for usernames. I had a feeling tr0ll2 took a similar approach. 
