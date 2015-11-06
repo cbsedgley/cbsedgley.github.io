@@ -16,7 +16,7 @@ Nothing too suspicious here after viewing the webpage's source code. I was met w
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_source.png" alt="Tr0ll 2 port 80 source code" class="img-responsive center-block"/>
 
-The next thing I looked for was a _robots.txt_ file to see if there were any directories a spider shouldn't be crawling. I found a list of potential directories to visit.
+The next thing I looked for was a _robots.txt_ file to see if there were any directories a "spider shouldn't be allowed" to crawl. I found a list of potential directories to visit.
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_robots.png" alt="Tr0ll 2 port 80 robots text file" class="img-responsive center-block"/>
 
@@ -24,4 +24,23 @@ The first directory called _noob_ displayed the following image. I felt like I w
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_noob.png" alt="Tr0ll 2 port 80 noob" class="img-responsive center-block"/>
 
-The next two directories, _nope_ and _try harder_ came back 404, but the fourth called _keep trying_ displayed the same familiar image as noob.
+The next two directories, _nope_ and _try harder_ came back 404, but the fourth called _keep trying_ displayed the same familiar image as noob. After looking through the rest of the directories, two more came back with the same image, _don't bother_ and _ok this is it_.
+Nothing looked suspicious in the source code, so I decided to take a look at the images themselves. Perhaps stegonography is being used?? I downloaded all four of the images and each came back at 15.8kb except for the image from the directory _dont bother_ which had a size of 15.9kb.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_dontbother.png" alt="Tr0ll 2 port 80 dont bother image" class="img-responsive center-block"/>
+
+From here I decided to try using the command _strings_ to see if any human readable txt could be grabbed from the picture.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_strings.png" alt="Tr0ll 2 port 80 dont bother image strings command" class="img-responsive center-block"/>
+
+"Look Deep within y0ur self for the answer." From the misspelling of _y0ur_, I assumed that _y0ur self_ was a directory. When appending it to the end of the domain (192.168.116.154), the following page was displayed
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_y0ur_self.png" alt="Tr0ll 2 port 80 y0ur self directory" class="img-responsive center-block"/>
+
+When opening the text file _answers.txt_ I was presented with a huge list of strings that were _base64_ encoded as indicated by the "==" at the end of some of the strings.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_base64.png" alt="Tr0ll 2 base64" class="img-responsive center-block"/>
+
+I ran the following command to decode the entire list and write it out to the text file _output.txt_.
+
+<img src="/img/posts/tr0ll2_images/tr0ll2_base64_decode.png" alt="Tr0ll 2 base64" class="img-responsive center-block"/>
