@@ -4,12 +4,12 @@ section-type: post
 title: Tr0ll 2
 category: VulnHub
 ---
-After completing the first boot2root in the tr0ll series, I decided to try my luck on the second. I booted up the vm and ran the command __arp-scan --localnet__ to find out the IP address. I than ran an nmap scan (__nmap -sS -A 192.168.116.151__) to see what services were running.
+After completing the first boot2root in the tr0ll series, I decided to try my luck on the second. I booted up the vm and ran the command __arp-scan --localnet__ to find out the IP address. I than ran an nmap scan (__nmap -sS -A 192.168.116.154__) to see what services were running.
 
-<img src="/img/posts/tr0ll2_images/selection_00111.png" alt="Tr0ll 2 nmap scan" class="img-responsive center-block"/>
+<img src="/img/posts/tr0ll2_images/tr0ll2_nmap.png" alt="Tr0ll 2 nmap scan" class="img-responsive center-block"/>
 
-Like the last tr0ll vm, I decided to start my analysis on port 80. I opened up Firefox and and shot over to __192.168.116.151__. Again, I see the all to familiar meme face.
+Like the last tr0ll vm, I decided to start my analysis on port 80. I opened up Firefox and and shot over to __192.168.116.154__. Again, I see the all to familiar meme face.
 
-<img src="/img/posts/tr0ll2_images/selection_00112.png" alt="Tr0ll 2 port 80" class="img-responsive center-block"/>
+<img src="/img/posts/tr0ll2_images/tr0ll2_port80.png" alt="Tr0ll 2 port 80" class="img-responsive center-block"/>
  
 __This post will continue to be updated as Tr0ll2 is further explored__
