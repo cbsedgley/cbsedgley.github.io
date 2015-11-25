@@ -54,4 +54,5 @@ Using the command below, I used _output.txt_ as a list to test against the usern
 
 <img src="/img/posts/tr0ll2_images/tr0ll2_hydra.png" alt="Tr0ll 2 hydra bruteforce ftp" class="img-responsive center-block"/>
 
-In the first tr0ll vm, when I used hydra to bruteforce ssh, I had one constant for the password and a list to test for usernames. I had a feeling tr0ll2 took a similar approach. 
+In the first tr0ll vm, when I used hydra to bruteforce ssh, I had one constant for the password and a list to test for usernames. I had a feeling tr0ll2 took a similar approach.
+Looking back at _output.txt_, I noticed that many of the strings were common names. I 

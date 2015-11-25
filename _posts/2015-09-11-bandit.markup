@@ -395,17 +395,3 @@ What I Did: Found the password in a file under the directory __poop/poop1__ ca
 
 Level 24 Password: 
 <span style="font-size:0.8em;">**UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ**
-
-**BANDIT LEVEL 24**
-
-Level 24 Goal: _A daemon is listening on_ __port 30002__ _and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through_ __all of the 10000 combinations,__ _called brute-forcing._
-
-Commands: __no commands offered for this level__
-
-What I Did: 
-
-Level 25 Password:
-
-
-
-**<span style="color:red">This post will continue to be updated as levels are completed</span>**
