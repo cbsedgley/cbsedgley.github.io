@@ -3,6 +3,7 @@ layout: post
 section-type: post
 title: Bandit
 category: OverTheWire
+status: [COMPLETE]
 ---
 Now that I've completed my first boot2root (tr0ll) I decided to start looking at some different websites I could practice my skills on. One site I kept hearing about was [overthewire.org](http://overthewire.org) so I finally checked it out. It recommended that I begin with the Bandit war game, so I will keep this post updated as a progress through the different levels of Bandit.
 

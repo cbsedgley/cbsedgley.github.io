@@ -3,6 +3,7 @@ layout: post
 section-type: post
 title: Tr0ll 2
 category: VulnHub
+status: [IN PROGRESS]
 ---
 After completing the first boot2root in the tr0ll series, I decided to try my luck on the second. I booted up the vm and ran the command __arp-scan --localnet__ to find out the IP address. I than ran an nmap scan (__nmap -sS -A 192.168.116.154__) to see what services were running.
 
@@ -55,4 +56,4 @@ Using the command below, I used _output.txt_ as a list to test against the usern
 <img src="/img/posts/tr0ll2_images/tr0ll2_hydra.png" alt="Tr0ll 2 hydra bruteforce ftp" class="img-responsive center-block"/>
 
 In the first tr0ll vm, when I used hydra to bruteforce ssh, I had one constant for the password and a list to test for usernames. I had a feeling tr0ll2 took a similar approach.
-Looking back at _output.txt_, I noticed that many of the strings were common names. I 
+Looking back at _output.txt_, I noticed that many of the strings were common names. I
