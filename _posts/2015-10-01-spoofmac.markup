@@ -7,11 +7,10 @@ status: [IN PROGRESS]
 ---
 <img src="/img/posts/spoofmac/timelimit.png" alt="TimeLimit" class="img-responsive center-block"/>
 
-This post will address the different methods you can take to bypass wifi-time restrictions commonly found in coffee shops, airports, xfinity hotspots, etc. I will
-be splitting this post into three sections to cover the methods most commonly used for Windows OS (XP,Vista,7,and 10), Linux OS (too many to list), and OSX (Lion, Mavericks, Yosemite, etc.).
+This post will address the different methods you can take to bypass wifi-time restrictions commonly found in coffee shops, airports, xfinity hotspots, etc. This post will cover the methods most commonly used for Windows OS (XP,Vista,7,and 10), Linux (too many distros to list), and OSX (Lion, Mavericks, Yosemite, etc.).
 Below are some pictures of what typical wifi-time restrictions look like:
 
-Any hotspots **commonly** named "xfinitywifi" (saying commonly because hotspots could be spoofed, so be weary), are most likely owned by the ISP Comcast. They've been so generous to offer a
+Any hotspots *commonly* named "xfinitywifi" (saying commonly because hotspots could be spoofed, so be weary), are most likely owned by the ISP Comcast. They've been so generous to offer a
 complimentary hour of free internet by just providing an email address (you don't need to validate so come up with any random one) and a zip code (again could be any valid one).
 
 <img src="/img/posts/spoofmac/xfinitysignup.png" alt="XfinitySignUp" class="img-responsive center-block"/>
@@ -24,4 +23,25 @@ to come in and buy food.
 
 <img src="/img/posts/spoofmac/panera.png" alt="Panera" class="img-responsive center-block"/>
 
-However, there are very simple ways around these restrictions. Programs that monitor how long a user
+A network can monitor how long a user has been connected by primarily relying on monitoring the devices MAC address. A MAC address
+is a unique identifier given to a NIC (Network Interface Card) found on most laptops, which is needed to identify wireless networks. By keeping track of how long a MAC address has been connected to a network, the network can control when
+a device is kicked off. After this occurs, the MAC address is usually placed in a blacklist for a short period of time that restricts the device from connecting back to the network for a period of time. However, with both of these restricted networks, there are very simple methods around these restrictions.
+
+**OSX/Linux**
+
+For OSX and Linux distros, a simple command can get you connected right back on the network. The first thing you'll need to determine is the MAC address of your NIC. Using the command below, the MAC address of your NIC is usually going to be found next to
+*en0* or *en1* in the form of *ether* *xx:xx:xx:xx:xx:xx*. If you're unsure which MAC address is used for your NIC, select either *en0* or *en1* with *status: active*. NOTE: en0 is usually saved for wired connections, such as through an ethernet, so you will
+most likely be using *en1*
+
+{% highlight bash %}
+ifconfig
+{% endhighlight %}
+
+Save the old MAC address to a text file somewhere on your desktop. While you'll be changing the MAC address to a new one so you can reconnect, you will end up changing it back to this old one so you don't have to re-eestablish all the wireless networks your computer
+used to be able to automatically connect to. Once that is done, run the following command:
+
+{% highlight bash %}
+sudo ifconfig en1 ether xx:xx:xx:xx:xx:xx
+{% endhighlight %}
+
+You may need to enter your root password for the changes to take place, but once that's done, turn off your wifi off and back on for the new MAC address to take hold. 
