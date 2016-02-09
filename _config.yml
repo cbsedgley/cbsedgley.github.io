@@ -1,7 +1,6 @@
 # Site settings
 
-url: https://sedgley.io
-enforce_ssl: sedgley.io
+baseurl: "cbsedgley.github.io/sedgley.io"
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
