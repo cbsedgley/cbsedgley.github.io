@@ -1,6 +1,6 @@
 # Site settings
 
-baseurl: "cbsedgley.github.io/sedgley.io"
+baseurl: "cbsedgley.github.io/sedgley"
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
