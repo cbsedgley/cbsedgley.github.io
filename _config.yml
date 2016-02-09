@@ -1,6 +1,7 @@
 # Site settings
 
-baseurl: "cbsedgley.github.io/sedgley.io"
+url: https://sedgley.io
+enforce_ssl: sedgley.io
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
@@ -17,6 +18,7 @@ pages_list:
 
 background-img: "/img/intro-bg.jpg"
 
+permalink: /blog/:title/
 # About variables
 
 # me-img: "/img/me.jpg"
@@ -24,7 +26,8 @@ background-img: "/img/intro-bg.jpg"
 # Blog variables
 paginate: 15
 
-paginate_path: "/blog/page:num"
+#old paginate_path: "/blog/page:num"
+pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
 
 post-preview-words: 128
 
