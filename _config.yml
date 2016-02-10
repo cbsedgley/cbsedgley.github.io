@@ -2,7 +2,7 @@
 
 url: "cbsedgley.github.io"
 baseurl: /blog
-permalink: /:title
+permalink: /blog/:title
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
