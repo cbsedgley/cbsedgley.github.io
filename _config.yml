@@ -1,6 +1,6 @@
 # Site settings
 
-url: "sedgley.io"
+url: "cbsedgley.github.io"
 baseurl: "blog/"
 permalink: /:title
 title: "Sedgley.io"
