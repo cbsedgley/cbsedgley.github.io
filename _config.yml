@@ -1,8 +1,10 @@
 # Site settings
 
-baseurl: "/blog"
-url: "cbsedgley.github.io"
-permalink: /:title
+name: Sedgley Blog
+author: Chris Sedgley
+author_email: cbsedgley27@gmail.com
+url: "http://sedgley.io"
+permalink: pretty
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
@@ -22,8 +24,6 @@ background-img: "/img/intro-bg.jpg"
 # About variables
 
 # me-img: "/img/me.jpg"
-
-# Blog variables
 paginate: 15
 
 #old paginate_path: "/blog/page:num"
