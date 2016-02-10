@@ -1,7 +1,8 @@
 # Site settings
 
 url: "cbsedgley.github.io"
-permalink: /blog/:title
+baseurl: /blog
+permalink: /:title
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
 keywords: "sedgley, security, wargames, technology, infosec, boo2root"
