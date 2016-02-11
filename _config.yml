@@ -4,7 +4,6 @@ name: Sedgley Blog
 author: Chris Sedgley
 author_email: cbsedgley27@gmail.com
 url: "http://sedgley.io"
-baseurl: /blog/
 permalink: pretty
 title: "Sedgley.io"
 description: "Personal blog about security realted topics"
@@ -27,8 +26,7 @@ background-img: "/img/intro-bg.jpg"
 # me-img: "/img/me.jpg"
 paginate: 15
 
-#old paginate_path: "/blog/page:num"
-pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+paginate_path: "/blog/page:num"
 
 post-preview-words: 128
 
