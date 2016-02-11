@@ -14,7 +14,7 @@
       {{ page.content | markdownify }}
 
       {% for post in paginator.posts %}
-        <h4 text-align="center"><a href="{{ post.url }}"> <strong>{{ post.title }} </strong> </a><small>. {{ post.category }} .</small>{{ post.date | date_to_string }} <small>. {{post.status}} <small></h4>
+        <h4 text-align="center"><a href="{{ post.url }}"> <strong>{{ post.title }} </strong> </a><small>. {{ post.category }} .</small> {{ post.date | date_to_string }} <small>. {{post.status}} </small></h4>
       {% endfor %}
 
       <!-- Pagination links -->
