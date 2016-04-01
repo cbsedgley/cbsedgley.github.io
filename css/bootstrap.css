@@ -71,6 +71,10 @@ mark {
 small {
   font-size: 80%;
 }
+small_inprogress {
+  font-size: 80%;
+  color: #ffa500;
+}
 sub,
 sup {
   position: relative;
