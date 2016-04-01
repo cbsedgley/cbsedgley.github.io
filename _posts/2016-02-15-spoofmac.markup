@@ -1,6 +1,6 @@
 ---
-layout: post
-section-type: post_inprogress
+layout: post_inprogress
+section-type: post
 title: Spoofing Your Mac Address
 category: spoofing
 status: [IN PROGRESS]
@@ -45,7 +45,7 @@ sudo ifconfig en1 ether xx:xx:xx:xx:xx:xx
 <<<<<<< HEAD:_posts/2015-10-01-spoofmac.markup
 You may need to enter your root password for the changes to take place, but once that's done, turn off your wifi off and back on for the new MAC address to take hold.
 =======
-*Note: You may need to enter your root password for the changes to take place.* 
+*Note: You may need to enter your root password for the changes to take place.*
 
-Once that's done, turn your wifi off and then back on for the new MAC address to be written to the NIC. 
+Once that's done, turn your wifi off and then back on for the new MAC address to be written to the NIC.
 >>>>>>> origin/master:_posts/2016-02-15-spoofmac.markup
